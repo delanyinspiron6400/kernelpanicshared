@@ -54,55 +54,56 @@ Beschreiben Sie die Anwendungsgebiete der folgenden Controller-Architekturen und
 Angenommen, Sie erhalten den Auftrag, die Steuerung für ein Kieswerk zu entwerfen, welche Architektur würden Sie wählen?
 \end{framed}
 
-\textbf{Dezentrales Kontrollsystem}
-\\
-
 \begin{figure}[h!]
-\vspace{-20pt}
+
   \begin{center}
     \includegraphics[width=0.48\textwidth]{figures/dezentral.pdf}
   \end{center}
   \caption{Dezentrales Kontrollsystem}
 \vspace{-10pt}
 \end{figure}
-Das ist ein Beispieltext. 
+Ein dezentrales Kontrollsystem hat keine zentrale Steuereinheit, sondern $n$-Kontrolleinheiten, die mit lokaler Information Kontrollvariablen errechnen, die gemeinsam zur Steuerung eines technischen Prozesses verwendet werden, dies versteht man unter verteilter Kontrolle. Diese Kontrolleinheiten sind unabhängig voneinander und können realisiert werden als Spezialhardware oder als eigene Mikrokontroller. Komplexes Verhalten entsteht dabei durch die Arbeit von \textit{Lower-Level} Kontrolleinheiten, die gemeinsam ein komplexes Verhalten ergibt. \\
+\textbf{Beispiele:} Natur (z.B.: Insektenkolonien) und in der Robotik (Roboter simulieren Schwarmverhalten). 
 \vspace{0.5cm}
 
-\textbf{Zentrales Kontrollsystem}
-\\
-Das ist ein Beispieltext. 
+\pagebreak
+
 \begin{figure}[h!]
 \vspace{-20pt}
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{figures/dezentral.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/zentral.pdf}
   \end{center}
-  \caption{Dezentrales Kontrollsystem}
+  \caption{Zentrales Kontrollsystem}
 \vspace{-10pt}
 \end{figure}
-\pagebreak \\
-\textbf{Mehrebenen-Kontrollsystem}
-\\
+Ein zentrales Kontrollsystem hat eine zentrale Steuereinheit, das über ein Interface mit dem Zustandsvariabeln aus dem Prozess versorgt und das über Kontrollvariabeln dann mit dem technischen Prozess kommuniziert, hier liegt die Kontrolle ganz und gar bei dem zentralen System. Die Implementierung der Regel- und Steuerkreise erfolgt oft in Software. Solch ein System lässt sich auch als ein TMR-System implementieren, somit lässt sich die Ausfallssicherheit erhöhen.\\
+Beispiele: Verkehrssteuerung (Zentrale Einheit verwaltet alle Ampel).  
 \begin{figure}[h!]
-\vspace{-20pt}
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{figures/dezentral.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/mehrebenen.pdf}
   \end{center}
-  \caption{Dezentrales Kontrollsystem}
+  \caption{Mehrebenen Kontrollsystem}
 \vspace{-10pt}
 \end{figure}
+Ein Mehrebenenkontrollsystem bildet die Mischung aus dem zentralen und dem dezentralen Kontrollsystem, hierbei arbeitet die zentrale Einheit als "Supervisor" über $n$-Kontrollern, die jeweils Zustandsvariablen erhalten und diese in Kontrollvariabeln umsetzen. Diese lokalen Kontroller sind direkt für die Steuerung des Prozesses verantwortlich, die Steuerung/Verwaltung der Kontroller übernimmt eine zentrale Steuereinheit. \\
+Beispiele: 
+\pagebreak
 \\
 \textbf{Netzwerkbasiertes verteiltes Kontrollsystem}
-\\
 \begin{figure}[h!]
-\vspace{-20pt}
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{figures/dezentral.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/netzwerk.pdf}
   \end{center}
   \caption{Dezentrales Kontrollsystem}
 \vspace{-10pt}
 \end{figure}
+\vspace{0.5cm}\\
+Hierbei handelt es sich um ein ähnliches System wie das Mehrebenen System, Sensoren/Aktoren sind mit lokalen Controllern verbunden, es liegt aber keine zentrale Steuereinheit vor, welche die Steuerung übernimmt, sondern mehrere Steuereinheiten haben über ein Netzwerk Zugriff auf die lokalen Steuereinheiten, das ermöglicht bei den lokalen Steuereinheiten \textit{harte Echtzeitfähigkeit} und bei dem Zugriff über das Netzwerk \textit{weiche Echtzeitfähigkeit}.
+\\
+Beispiele: 
 
-
+\vspace{1cm}
+Um die Steuerung in einem Kieswerk zu erreichen, wäre es von Vorteil, ein Mehrebenen Kontrollsystem einzusetzen, da Förderbänder und Verarbeitungsmaschinen von einzelnen Kontrollern gesteuert werden könnten, die dann über eine zentrale Steuereinheit koordiniert werden können. 
 \pagebreak
 
 
