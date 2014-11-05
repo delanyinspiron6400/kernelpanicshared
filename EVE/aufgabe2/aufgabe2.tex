@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper,ngerman]{article}
+\usepackage{stylesheet}
+\begin{document}
+\include{titlepage}
+
+%-------------------------------------------------------------------------------
+%
+% Beginn des Protokolls
+%
+%-------------------------------------------------------------------------------
+
+\section{Aufgabe 1}
+
+
+\begin{framed}
+\textbf{Entwurf von Echtzeitsystemen}\\
+Beschäftigen Sie sich mit der Ermittlung des sogenannten running average zu periodisch erfassten Messwerten. Sie wollen nun eine entsprechende Komponente entwickeln, die (zu jedem beliebigen Zeitpunkt) den jeweils aktuellen Mittelwert zur Verfügung stellen soll, die zuvor erfassten bzw. verarbeiteten Daten dürfen also verworfen werden. Es sollen zuverlässig \textbf{periodisch} erfasste Daten verarbeitet werden und es ist Echtzeitfähigkeit zu gewährleisten, d.h. die Aktualisierung des Mittelwerts soll innerhalb eines definierten Zeitrahmens nach der Erfassung jedes Messwerts erfolgen.
+\begin{enumerate}
+\item Beschreiben Sie die Bestimmung des running average in Pseudocode.
+\item Würden Sie eine solche Komponente unter den gegebenen Anforderungen in Hardware (FSM oder Datenpfad-Architektur mittels FPGAs oder ASICs) oder in Software (auf einer RISC, CISC oder VLIW Architektur) umsetzen? Worauf ist jeweils zu achten und wie könnte jeweils ein mögliches Interface ihrer Komponenten aussehen?
+\item Würde Ihnen eine Multi-Core CPU oder eine DSP-Architektur mit Multiply-and-Accumulate(MAC) Einheit etwas bringen?
+\end{enumerate}
+\end{framed}
+
+
+
+\pagebreak
+
+\section{Aufgabe 2}
+\begin{framed}
+\textbf{Entwurf eines SPS-Bausteins}
+Entwerfen Sie einen Baustein, welcher die Funktion der Wendeschützsteuerung aus Aufgabe 1.4 übernimmt. Die bereitzustellende Baustein-Schnittstelle ist in Abbildung 2 dargestellt. Die Sprache, welche Sie zur Implementierung nutzen, bleibt ihnen überlassen (auch Pseudocode ist zulässig)
+\end{framed}
+%
+%\begin{figure}[h!]
+%\begin{flushright}
+%\includegraphics[scale=1]{figures/schaltung.pdf}
+%\end{flushright}
+%\end{figure}
+ 
+\pagebreak
+
+
+\section{Aufgabe 3}
+\begin{framed}
+\textbf{Prinzipielle Controller-Architekturen} \\
+Beschreiben Sie die Anwendungsgebiete der folgenden Controller-Architekturen und nennen Sie jeweils ein Beispiel:
+\begin{enumerate}
+\item Dezentrales Kontrollsystem
+\item Zentrales Kontrollsystem
+\item Mehrebenen-Kontrollsystem
+\item Netzwerkbasiertes verteiltes Kontrollsystem
+\end{enumerate}
+Angenommen, Sie erhalten den Auftrag, die Steuerung für ein Kieswerk zu entwerfen, welche Architektur würden Sie wählen?
+\end{framed}
+
+\textbf{Dezentrales Kontrollsystem}
+\\
+\textbf{Zentrales Kontrollsystem}
+\\
+\textbf{Mehrebenen-Kontrollsystem}
+\\
+\textbf{Netzwerkbasiertes verteiltes Kontrollsystem}
+\\
+
+
+
+\pagebreak
+
+
+\section{Aufgabe 4}
+\begin{framed}
+\textbf{Prozess-Schnittstellen} \\
+Welche Vorgänge sind notwendig, um ein kontinuierliches analoges Signal in einem digitalen Computer verarbeiten zu können?
+Beschreiben Sie diese und erläutern Sie die Unterschiede, wenn als Verarbeitungseinheit eine SPs oder ein Mikrocontroller verwendet wird. 
+\end{framed}
+\pagebreak
+
+
+
+
+\section{Aufgabe 5}
+\begin{framed}
+\textbf{Sensorik} \\
+Benennen Sie je 3 mögliche Sensoren aus dem Bereich Fahrzeug, Digitalkamera und Raumfahrt. Ordnen Sie die Wichtigkeit der Sensordaten nach ihrer Bedeutung in Bezug auf ein sicheres Funktionieren des Systems. Analysieren sie, ob analoge/digitale bzw. kontinuierliche/diskrete Signale geliefert werden und geben sie mögliche Vor- und Nachbearbeitungsschritte an. 
+\end{framed}
+
+\pagebreak
+
+\section{Aufgabe 6}
+\begin{framed}
+\textbf{Speicher Programmierbare Steuerung / SPS} \\
+Entwerfen sie ein SPS-Programm in zwei der standardisierten Sprachen (AWL,FBS und KOP) zur Addition zweier digitaler Eingänge A und B. Die beiden Ausgänge (Summe S und Überlauf C) sollen durch einfache logische Operationen gebildet werden. Eine Liste der möglichen Operationen ist in den VO-Folien enthalten.
+\end{framed}
+   
+\pagebreak
+
+\section{Aufgabe 7}
+
+\begin{framed}
+\textbf{ADC im Mikrokontroller} \\
+Suchen Sie sich ein Datenblatt des \textit{PIC16F1789} Mikrocontrollers. Identifizieren und beschreiben sie die Verarbeitungsmethode des eingebauten ADCs. Welche Kenngrößen werden zum Vergleich von ADCs verwendet? Bestimmen sie diese für obigen Mikrocontroller. 
+\end{framed}   
+   
+   
+   
+\end{document}

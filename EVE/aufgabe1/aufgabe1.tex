@@ -1,0 +1,144 @@
+\documentclass[12pt,a4paper,ngerman]{article}
+\usepackage{stylesheet}
+\begin{document}
+\include{titlepage}
+
+%-------------------------------------------------------------------------------
+%
+% Beginn des Protokolls
+%
+%-------------------------------------------------------------------------------
+
+\section{Aufgabe 1}
+
+
+\begin{framed}
+\textbf{Entwurf Eingebetteter Systeme}\\
+Welche Kriterien müssen Sie beim Entwurf eines eingebetteten Systems beachten? Nennen Sie mindestens 10 Punkte und konkretisieren Sie diese am Beispiel einer Raketensteuerung oder einer Digitalkamera!
+\end{framed}
+\begin{enumerate}
+\item \textbf{Energieeffizienz}: Eingebettete Systeme müssen energieeffizient sein, im speziellen Anwendungsgebiet der Kamera soll der Akku eine möglichst lange Laufzeit anbieten, da eine Kamera in den meisten Situationen ohne statische Stromversorgung verwendet wird.  
+\item \textbf{Stoßfestigkeit:} Fragile Einrichtungen bieten sich nicht gerade an für eingebettete Systeme, da solche oft diversen, physikalischen Umwelteinflüssen ausgesetzt sind, die das System nicht zum Ausfall bringen sollen, bei einer Kamera ist das zwar nicht ganz leicht zu realisieren, da Linsenteile Stößen viel weniger entgegensetzen können, aber auch die Systeme müssen gegen geringe Stöße resistent sein.
+\item \textbf{Temperaturfestigkeit:} Je nach Einsatzbereich gibt es einen gewissen Temperaturbereich, dem das System ausgesetzt ist und den es auch überstehen muss, bei einer Kamera sind das normalerweise typische Temperaturbereiche zwischen $-10^\circ C$ und $50^\circ C$.
+\item \textbf{Ausfallsicherheit:} Die Ausfallssicherheit ist eine oft sehr wichtige Eigenschaft von eingebetteten Systemen, bei der Kamera ist diese nicht ganz so kritisch, aber auch nicht von geringer Bedeutung!
+\item \textbf{Physikalische Abmessungen:} Für den jeweiligen Anwendungsbereich müssen die physikalischen Abmessungen passend sein, eine Kamera muss tragbar sein, darf also nicht so schwer/groß sein, natürlich auch nicht zu klein, aber das ist meistens nicht das Problem.
+\item \textbf{Leistung:} Die Leistung muss der Problemstellung angepasst sein, es ist kein Intel Core i7 für eine Digitalkamera notwendig, jedoch muss genügend Rechenkapazität vorhanden sein, um Videos oder Serienaufnahmen zu ermöglichen. 
+\item \textbf{Langlebigkeit:} Eingebettete Systeme können oft nicht leicht ausgetauscht werden, sollten daher eine möglichst lange Lebensdauer haben, beendet ein Chip in der Kamera seinen Dienst, so ist oft die ganze Kamera zu ersetzen, da die Reperatur zu aufwendig wäre. 
+\item \textbf{Echtzeitfähigkeit:} Eine gewisse Echtzeitfähigkeit muss auch gefordert werden bei den meisten eingebetteten Systemen, abhängig von der Nutzung mit harten, weichen oder festen Grenzen. Der Shutter und der Zoom müssen beide zeitkritisch gesteuert werden, um ein scharfes Bild zu ermöglichen. 
+\item \textbf{Normen:} Eingebettete Systeme müssen gewissen Normen erfüllen, die Kamera ermöglicht gewisse ISO-Einstellungen und vielfältige andere Möglichkeiten, die auf irgendeine Weise genormt sind. 
+\item \textbf{Schnittstellen:} Eingebettete Systeme bieten oft eine Schnittstelle zur Kommunikation mit dem Nutzer oder anderen Systemen, bei Digitalkameras ist da zum Beispiel ein Display, oft schon ein Touchscreen, integriert, der die Interaktion des Nutzers mit dem System ermöglicht. 
+\end{enumerate}
+
+\section{Aufgabe 2}
+\begin{framed}
+\textbf{Echtzeitfähigkeit}\\
+In der Vorlesung wurde der Unterschied zwischen harter und weicher Echtzeitfähigkeit erläutert. Erklären Sie in eigenen Worten unter Verwendung von Beispielen:
+\begin{enumerate}
+\item Wo der Unterschied liegt?
+\item Wie man ihn erkennt?
+\item Wie man Echtzeitfähigkeit garantieren kann?
+\end{enumerate}
+Geben Sie zu jedem Beispiel zudem ein sinnvolles Profit/Penalty-Diagramm an.
+\end{framed}
+Der Unterschied zwischen harten und weichen Echtzeitsystemen besteht daran, das bei harten Echtzeitsystemen eine \textbf{Verletzung der Zeitbedingung} unweigerlich zum Systemausfall führt, wohingegen man bei weichen Echtzeitsystemen nur eine \textbf{Leistungsminderung}, jedoch \textbf{keinen Systemausfall} zu erwarten hat. \\
+Als Beispiel eines sehr kritischen \textbf{harten Echtzeitsystemes} kann man die Steuerung eines Atomkraftwerks heranziehen, hierbei würde eine Verletzung der Zeitbedingung beim Einführen der Regelstäbe zu einer unkontrollierten Kettenreaktion führen, die eine nukleare Atomkatastrophe auslösen könnte, was natürlich fatal wäre. Hingegen ist Datenbankensystem ein weiches Echtzeitsystem, bei dem Einträge auch mit etwas Verzögerung noch ihre Gültigkeit haben, jedoch für den Nutzer eine gewisse Leistungsminderung darstellen durch die Wartezeit, es kommt aber zu keinem Systemausfall. \\
+Um ein korrektes Ergebnis zu liefern, muss logische und zeitliche Korrektheit vorherrschen, die Regelstäbe müssen also nicht nur zu einem richtigen Zeitpunkt, sondern auch in einem gewissen Maß eingeführt werden, um eine Kontrolle der Kernreaktion zu ermöglichen. \\
+Aus den Folgen bzw. dem Schaden lässt sich der Unterschied sehr leicht ablesen, manchmal ist eine gewisse Toleranz erlaubt, dann spricht man von einem \textbf{weichen Echtzeitsystem} , gibt es keine Toleranz, so ist es ein \textbf{hartes Echtzeitsystem}. \\
+Schlechtesten Fall betrachten, dann Prioritäten setzen. 
+
+\pagebreak
+
+
+\section{Aufgabe 3}
+\begin{framed}
+\textbf{Moore vs Mealy Automat}\\
+In der Vorlesung wurde der Moore und der Mealy Automat kurz angesprochen. Erläutern sie die grundsätzlichen Unterschiede zwischen den beiden Typen und entwerfen Sie ein einfaches Beispiel für beide Automatentypen, anhand dessen Sie die jeweilige Funktion erläutern. Gebe Sie zusätzlich die formale Definition zu beiden Automaten an. 
+\end{framed}
+
+\subsection*{Moore-Automat}
+Ein Moore-Automat ist ein endlicher Automat, welcher beiderseits deterministisch und auch nichtdeterministisch sein kann, die Ausgabe hängt ausschließlich von seinem Zustand ab
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{figures/moore.pdf} 
+\end{figure}
+Er hat dabei eine endliche Menge von Zuständen, ein Eingabe- und Ausgabealphabet, eine Übergangsfunktion und eine Ausgangsfunktion. Die Ausgabe kann sich hierbei nur ändern, wenn sich auch der Zustand ändert. 
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{| c | c | c | c ||| c | c|}
+    \hline
+    Taster  & NotAUS & current state & next state & current state & output  \\ \hline \hline
+    0 & X & Aus & Aus & Aus & Leuchte aus \\ \hline
+    1 & 0 & X & Ein & Ein & Leuchte ein \\ \hline
+    0 & 0 & Ein & Ein &  &  \\ \hline
+    1 & 1 & X & Aus &  &  \\ \hline
+    0 & 1 & X & Aus &  &  \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Moore-Automat}
+\end{table}
+\pagebreak
+\subsection*{Mealy-Automat}
+Ein Mealy-Automat ist ein endlicher Automat, dessen Ausgabe von seinem Zustand und auch der Eingabe abhängt, auch er besitzt eine endliche Menge von Zuständen, ein Eingabe- und Ausgabealphabet, eine Übergangsfunktion sowie eine Ausgabefunktion. Die Ausgabe kann sich hier ändern, wenn sich entweder der Zustand
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.8]{figures/mealy.pdf} 
+\end{figure}
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{| c | c | c ||| c | c | c |}
+    \hline
+    Taster  &  current state & next state & NotAus & current state & output  \\ \hline \hline
+    0  & Aus & Aus & 0 & Aus & Leuchte aus \\ \hline
+    0 & Ein & Ein  & 0 & Ein & Leuchte ein\\ \hline
+    1  & X  & Ein & 1 & X & Leuchte aus \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Mealy-Automat}
+\end{table}
+\pagebreak
+
+
+
+
+
+\section{Aufgabe 5}
+\begin{framed}
+\textbf{CISC vs RISC und FPGA vs ASIC}\\
+Erläutern Sie die Unterschiede zwischen CISC und RISC sowie zwischen FPGA und ASIC sehr ausfürhlich. Geben Sie jeweils Beispiele für die einzelnen Architekturen an (mit Begründung) und erläutern Sie, welche Architektur in welchen Bereichen eingesetzt wird und warum?
+\end{framed}
+Beide bezeichnen eine Designphilosophie für Computerprozessoren.\\
+RISC (Reduced Instruction Set Computer) versucht, auf komplexe Befehle zu vermeiden und einfach zu dekodierende und schnell ausführbare Befehle zu verwenden, was eine hohe Taktfrequenz ermöglicht. ARM-Prozessoren, XBOX 360 und der Playstation 3. Der Schwerpunkt liegt auf der Software, hat nur single-clock, reduzierte Instruktionen.\\
+CISC (Complex Instruction Set Computer) zeichnet sich durch viele, verhältnismäßig mächtige Einzelbehelfe aus, wohingegen RISC zugunsten einer hohen Ausführungsgeschwindigkeit und eines niedrigeren Decodieraufwands weitgehend auf komplexe Befehle verzichtet. Hier hat die CPU überlicherweise wenige Reigster, wovon einige meisten Spezialtasks haben, und die Befehle sind meist unterschiedlich lang. Schwerpunkt auf die Hardware, enthält multi-clock complex instructions. \\
+Moderne CPUs sind meistens Mischungen aus CISC und RISC.\\
+FPGA steht für Field Programmable Gate Array und bezeichnet einen integrierten Schaltkreis in der Digitaltechnik, diese werden in allen Bereichen der Digitaltechnik eingesetzt, vor allem aber dort, wo es auf schnelle Signalverarbeitung und flexible Änderungen ankommt, sie ermöglichen die preiswerte und flexible Fertigung komplexer Systeme wie Mobilfunk-Basisstationen. Sie werden zum Beispiel zur Echtzeit-Verarbeitung von komplexen Alogrithmen, zur digitalen Singalverarbeitung in digitalen Filtern oder zur schnellen Fourier-Transformation eingesetzt oder in digitalen Speicheroszilloskopen. FPGAs werden auch häufig als Entwicklungsplattform für den digitalen Teil von ASICs verwendet, um die Funktion zu verifizieren.  \\
+ASIC bezeichnet eine anwendungsspezifische integrierte Schaltung (Application Specific Integrated Circuit), die Funktion ist im Gegensatz zu einem FPGA nicht mehr veränderbar nachträglich, die Herstellungskosten sind dafür geringer. Wegen der Anpassung auf ein spezifisches Problem arbeiten ASICs sehr effizient und um einiges schneller als funktionsgleiche Umsetzungen per Software auf Mikrocontrollern. Sie finden Anwendung in vielen verschiedenen elektronischen Geräten, von Radioweckern bis zu Chips in Computern wie dem AGNUS des Commodore Amiga. 
+\pagebreak
+
+
+
+
+\section{Aufgabe 6}
+\begin{framed}
+\textbf{Technische Prozesse}\\
+Nennen Sie insgesamt drei Beispiel für technische Prozesse aus den Themengebieten Raumfahrt, Robotik und Haushalt. Identifizieren Sie für jeden Prozess relevante Ein- und Ausgangsgrößen zur Steuerung/Regelung durch ein Echtzeitsystem. Umwelteinflüsse spielen in diesem Kontext eine wesentliche Rolle, ermitteln Sie deshalb mindestens je eine Störgröße und beschrieben sie deren Auswirkung auf den Prozess. 
+\end{framed}
+
+\subsection*{Raumfahrt}
+In der Raumfahrt wirken unzählige Ein- und Ausgangsgrößen auf ein Echtzeitsystem ein, vor allem muss aber bei einer Rakete beispielsweise die Flugbahn korrigiert werden, auf welche die Gravitationskraft naher massebehafteter Körper Einfluss nimmt, und in der Startphase natürlich noch hauptsächlich die Gravitationskraft der Erde selbst. Somit muss der Schub dementsprechend geregelt werden, um die korrekte Bahn halten zu können. Weiters ist auch der Druck und Sauerstoffgehalt für anwesende Lebewesen in einer Rakete essentiell, Sensoren überprüfen dazu dauernd diese lebensnotwendigen Werte und steuern daraufhin die Druckregelung sowie die Sauerstoffzufuhr. \\
+Eine Rakete ist allen Formen von kosmischer Strahlung ausgesetzt, die einerseits so gut wie möglich abgeschirmt werden muss, um Lebewesen zu schützen, aber die natürlich auch als Störgrößen in den digitalen Systemen eingehen und denen möglichst gut entgegengewirkt werden muss. 
+
+\subsection*{Robotik}
+Staubsauger-Roboter erfreuen sich immer größerer Beliebtheit, da sie fast ganz autonom arbeiten können und einem selbst viel Arbeit ersparen. Durch ein Vielzahl an Sensoren wird es dem Roboter ermöglicht, sich selbst zurechtzufinden in einem Raum und so die Arbeit autonom zu erledigen, ein solcher fährt auch bei Bedarf selbst in die Ladestation, um sich mit zusätzlicher Energie zu versorgen. Eingangsgrößen sind dabei die von Sensoren ermittelten räumlichen Abmessungen, die umgesetzt werden in einen "digitalen Grundriss", der nun abgefahren werden kann. 
+\\
+Zu achten ist dabei auf Stiegenabgänge und andere Hindernisse, die schwer oder gar nicht erkennbar sind für die eingebauten Sensoren, hierbei müssen erkennbare Sperren eingesetzt werden, um den Raum "Robotersicher" zu machen. 
+
+\subsection*{Haushalt}
+Ein Kühlschrank beschreibt ein immer komplexer werdendes technisches System in der heutigen Zeit, nimmt man ganz moderne Kühlschränke, so ist es nicht nur möglich, die Temperatur zu regeln, sondern auch Informationen über den Inhalt an Nutzer zu vermitteln. Das System misst dabei kontinuierlich die Innentemperatur und versucht diese konstant auf einem Wert zu halten, in dem die Wärmepumpe unterschiedlich stark arbeitet. Bei moderneren Kühlschränken gibt es noch mehrere Sensoren, die den Bestand erfassen können und bei Knappheit einer Ressource den Nutzer davon informieren können. 
+Ein beträchtliche Störgröße ist das Öffnen des Kühlschranks, das ein extrem schnelles Aufwärmen ermöglicht, deswegen geben die meisten Kühlschränke nach einer gewissen Öffnungszeit ein akustisches Warnsignal ab, um den Nutzer davor zu warnen. 
+
+   
+\end{document}

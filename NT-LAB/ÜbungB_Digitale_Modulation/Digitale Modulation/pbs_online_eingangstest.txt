@@ -1,0 +1,17 @@
+     Was heißt Codiergewinn?
+    Zeichnen Sie den Phasenstern von QPSK/8-PSK/BPSK/16-QAM
+    Erklären Sie den Unterschied zwischen Quell/Kanalcodierung und deren Zweck.
+    Was kann man aus dem Augendiagramm ablesen.
+    Prinzipschaltbild QPSK
+    Vorteile von digitalen Signalen
+    wie schaut die H(f) mit alpha= 1 aus,
+    Bei gegebener Bitrate r_b die benötigte Bandbreite für QPSK mit sinc-Equalizer berechnen.
+    mit welchem messgerät kann man das augendiagramm aufnehmen, in welcher betriebsart (A:oszi -x-t betrieb)
+    Was bedeute ISI? (InterSymbolInterferenz)
+    RZ-Code (011010110) umwandeln
+    Sinc - Equalizer
+    Was bedeutet weißes Rauschen, wie wirkt es sich am Spektrum aus, wo ist die SNR Ratio (wird während der Übung erläutert)
+    Schaltbild bei der Messung des Augendiagramms
+    Erklärung der Formel B(Hf) = 2 B(Basisband)
+    Erklärung Nyquistkriterium
+    Formeln: p_rest und erfc() auswendig hinschreiben 
