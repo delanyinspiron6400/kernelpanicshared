@@ -33,52 +33,58 @@ Die absolute Bandbreite ergibt sich durch
 B = B_N (1+\alpha)
 \end{equation}
 \subsection{Berechnungsbeispiele}
-
+\pagebreak
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK.jpg} 
-\caption{Test}
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK.jpg} 
+\caption{Signal in Frequenz- und Zeitbereich}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_avg.jpg} 
+\caption{Signal gemittelt in Frequenz- und Zeitbereich}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_B.jpg} 
+\caption{Ermittlung von $f_N$ mittels Marker}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK_.jpg} 
-\caption{Test}
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_demod.jpg} 
+\caption{Konstellationsdiagramm des Signals}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_demod_i_eye.jpg} 
+\caption{Augendiagramm des Signals}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK_avg.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_fs.jpg} 
 \caption{Test}
 \end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK_B.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK_demod.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK_demod_i_eye.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe1_QPSK_fs.jpg} 
-\caption{Test}
-\end{figure}
+\pagebreak
 
 \subsection{Diskussion}
-
+\begin{enumerate}
+\item Trägerfrequenz: $50MHz$
+\item $f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N$, Differenz $5 MHz = f_N \Rightarrow f_S = 2 \cdot f_N = 10 MHz$
+\item RC- Filter. $B = B_N (1 + \alpha) B = 19Mhz \quad B_N = 10 MHz \Rightarrow \alpha = 0.9$
+\item Symbolrate = 10MHz Format: QPSK
+\end{enumerate}
+Aus Augendiagramm erkennbar, Linien sauber in einem Punkt geschnitten
 
 
 \pagebreak
@@ -107,35 +113,39 @@ Es waren keine Tabellen aufzunehmen.
 \subsection{Formeln}
 
 \subsection{Berechnungsbeispiele}
-
+\pagebreak
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe2_16QAM.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe2_16QAM_1.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_1.jpg} 
+\caption{Test}
+\end{figure}
+
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_avg.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe2_16QAM_avg.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe2_16QAM_demod_equal.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_demod_equal.jpg} 
 \caption{Test}
 \end{figure}
 
 
 \subsection{Diskussion}
-
+\begin{enumerate}
+\item Verzerrungen beurteilen anhand Spektrums, bei höheren Frequenzen hängt das Spektrum, werden etwas gedämpft. Hochfrequenze Störungen sollten gefilter werden
+\item EVM und MagErr aus Bild auslesen.
+\end{enumerate}
 
 
 \pagebreak
@@ -158,70 +168,81 @@ Es waren keine Tabellen aufzunehmen.
 
 \subsection{Berechnungsbeispiele}
 
+
+\pagebreak
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_16QAM_demod.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_16QAM_demod.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_GMSK.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_GMSK.jpg} 
+\caption{Test}
+\end{figure}
+
+
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_GMSK_avg.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_GMSK_avg.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_MSK.jpg} 
+\caption{Test}
+\end{figure}
+
+
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_MSK_avg.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_MSK.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_OQPSK.jpg} 
+\caption{Test}
+\end{figure}
+
+
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_OQPSK_avg.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_MSK_avg.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_OQPSK_phase.jpg} 
+\caption{Test}
+\end{figure}
+
+
+\pagebreak
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_pi4DQPSK.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_OQPSK.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_QPSK.jpg} 
 \caption{Test}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_OQPSK_avg.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_OQPSK_phase.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_pi4DQPSK.jpg} 
-\caption{Test}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/Aufgabe3_QPSK.jpg} 
-\caption{Test}
-\end{figure}
-
+\pagebreak
 
 \subsection{Diskussion}
-
+OQPSK - Abtastzeitpunkt führt zu der Darstellung, Q-Phase wird genau zwischen zwei idealen Zeitpunkten abgetastet. 
 
 
 \pagebreak
@@ -245,17 +266,17 @@ Es waren keine Tabellen aufzunehmen.
 \subsection{Formeln}
 
 \subsection{Berechnungsbeispiele}
-
+\pagebreak
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe4_demod.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe4_demod.jpg} 
 \caption{Test}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/Aufgabe4_Spektrogramm.jpg} 
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe4_Spektrogramm.jpg} 
 \caption{Test}
 \end{figure}
 
@@ -264,7 +285,7 @@ Es waren keine Tabellen aufzunehmen.
 
 \subsection{Diskussion}
 
-
+Da haben wir nix dazu augeschrieben!
  
 
 
