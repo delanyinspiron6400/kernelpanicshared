@@ -32,13 +32,21 @@ Die absolute Bandbreite ergibt sich durch
 \begin{equation}
 B = B_N (1+\alpha)
 \end{equation}
+\pagebreak
 \subsection{Berechnungsbeispiele}
+\begin{enumerate}
+\item Trägerfrequenz: $50MHz$
+\item $f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N$, Differenz $5 MHz = f_N \Rightarrow f_S = 2 \cdot f_N = 10 MHz$
+\item RC- Filter. $B = B_N (1 + \alpha) B = 19Mhz \quad B_N = 10 MHz \Rightarrow \alpha = 0.9$
+\item Symbolrate = 10MHz Format: QPSK
+\end{enumerate}
 \pagebreak
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK.jpg} 
 \caption{Signal in Frequenz- und Zeitbereich}
+\label{fig:1_sig}
 \end{figure}
 
 
@@ -46,6 +54,7 @@ B = B_N (1+\alpha)
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_avg.jpg} 
 \caption{Signal gemittelt in Frequenz- und Zeitbereich}
+\label{fig:1_sig_avg}
 \end{figure}
 
 \pagebreak
@@ -54,6 +63,7 @@ B = B_N (1+\alpha)
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_B.jpg} 
 \caption{Ermittlung von $f_N$ mittels Marker}
+\label{fig:1_}
 \end{figure}
 
 \begin{figure}[H]
@@ -78,6 +88,7 @@ B = B_N (1+\alpha)
 \pagebreak
 
 \subsection{Diskussion}
+Die Trägerfrequenz lässt sich in der Software ermitteln, diese ergibt sich zu $50$ MHz. Nach einer Mittlung des Signals lässt sich auch die Symbolrate bestimmen, diese ist das Doppelte der Nyquistfrequenz $f_N$. 
 \begin{enumerate}
 \item Trägerfrequenz: $50MHz$
 \item $f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N$, Differenz $5 MHz = f_N \Rightarrow f_S = 2 \cdot f_N = 10 MHz$
@@ -299,7 +310,7 @@ Es waren keine Tabellen aufzunehmen.
 
 \subsection{Diskussion}
 
-Im Spektrogramm (Abbildung: \ref{fig:spectrogram}) sind recht deutlich die verschiiedenen Kanäle, die auf verschiedene Frequenzen aufgeteilt sind, zu erkennen. Zur Bestimmung der Länge eines Bursts haben wir das Spektrogramm im richtigen Zeitpunkt angehalten. Unsere Messung lieferte als Länge eines Frame-Bursts bei GSM $\approx 800 \mu S$. 
+Im Spektrogramm (Abbildung: \ref{fig:spectrogram}) sind recht deutlich die verschiedenen Kanäle, die auf verschiedene Frequenzen aufgeteilt sind, zu erkennen. Zur Bestimmung der Länge eines Bursts haben wir das Spektrogramm im richtigen Zeitpunkt angehalten. Unsere Messung lieferte als Länge eines Frame-Bursts bei GSM $\approx 800 \mu S$. 
 
 Außerdem ist ersichtlich, dass zwischen den einzelnen Bursts Pausen (Guard Periods) im Spektrogramm sind. Diese sind dazu da, dass es zwischen Übertragungen keine Überschneidungen gibt, da es sonst zu Datenverlust führen würde. Die Guard Periods haben eine zeitliche Dauer von $\approx 30 \mu S$.
 
