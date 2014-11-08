@@ -93,57 +93,60 @@ Aus Augendiagramm erkennbar, Linien sauber in einem Punkt geschnitten
 
 \section{Kanalverzerrungen / Equalizer}
 \subsection{Aufgabenstellung}
-Ein mittels 16-QAM moduliertes breitbandiges Signal wird über einen nicht-idealen Kanal mit Bandbegrenzung übertragen. Es soll die entstandenen Verzerrungen mit einem Equalizer entfernt werden. Weiters soll die Übertragunsfunktion des Kanals dargestellt werden. 
+Ein mittels 16-QAM moduliertes breitbandiges Signal wird über einen nicht-idealen Kanal mit Bandbegrenzung übertragen. Es sollen die entstandenen Verzerrungen mit einem Equalizer entfernt werden. Weiters soll die Übertragunsfunktion des Kanals dargestellt werden. 
 \begin{itemize}
 \item Beurteilen Sie die Verzerrungen anhand des Spektrums.
 \item Versuchen Sie, das verzerrte 16-QAM-Signal zu demodulieren. Stellen Sie Augen- und Konstellationsdiagramm dar. Beurteilen Sie anhand dieser Darstellungen die Signalqualität (beachten Sie auch Kenngrößen wie EVM und MER).
 \item Wenden Sie einen Equalizer an, um die Verzerrungen zu beseitigen. Wählen Sie dabei verschiedene Darstellungsmöglichkeiten, mit denen Sie die Verbesserung der Signalqualität belegen können. 
 \item Stelle Sie die Übertragungsfunktion des Kanals dar. 
 \end{itemize}
+\cite[18]{skript}
 
 \subsection{Messaufbau}
-Die Kanalverzerrung wurde hier durch den Spektrum Analyzer verursacht. Die Mittenfrequenz des SA wurde auf die Trägerfrequenz des 16-QAM-Signals gelegt und der angezeigte Frequenzbereich auf Null gesetzt. Der SA durchläuft im Normalbetrieb kontinuierlich den eingestellten Messbereich und transformiert zunächst die jeweils aktuelle Frequenz auf eine Zwischenfrequenz (hier 321.4MHz). Wenn der Bereich wie hier aber auf Null gesetzt wird, erfolgt einfach eine Messung mit einer gewissen Bandbreite um die eingestellte Mittenfrequenz herum. Bei dem verwendeten Spectrum Analyzer beträgt diese Bandbreite 30 MHz. Im Bereich von 30-50MHz treten lineare Verzerrungen auf. Der Spectrum Analyzer besitzt einen speziellen Ausgang, an welchem das auf die Zwischenfrequenz transformierte Signal abgegriffen werden kann. 
-\begin{figure}[H]
-\centering
-\includegraphics[scale = 1]{figures/uebung2_schaltung.png} 
-\caption{Messaufbau für Kanalverzerrung}
-\end{figure}
+Es wurde kein Messaufbau benötigt.
 \subsection{Tabellen}
 Es waren keine Tabellen aufzunehmen. 
 \subsection{Formeln}
-
+Es wurden keine Formeln benötigt.
 \subsection{Berechnungsbeispiele}
+Es wurden keine Berechnungen durchgeführt.
+
 \pagebreak
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM.jpg} 
-\caption{Test}
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_1.jpg} 
+\caption{Spektrum und zeitlicher Verlauf des empfangenen 16-QAM modulierten Signals}\label{fig:aufg2_16QAM_spec}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_1.jpg} 
-\caption{Test}
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_avg.jpg} 
+\caption{Spektrum und zeitlicher Verlauf des Signals nach dem Glätten.}\label{fig:aufg2_16QAM_spec_avg}
 \end{figure}
 
 \pagebreak
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_avg.jpg} 
-\caption{Test}
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_16QAM_demod.jpg} 
+\caption{Konstellations- und Augendiagramm des Signals, weiters Amplitudenfrequenzgang des Equalizer und Kanals und Kennwerte zur Beurteilung der Signalqualität}\label{fig:aufg2_16QAM_demod}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_demod_equal.jpg} 
-\caption{Test}
+\caption{Darstellung wie in Abbildung \ref{fig:aufg2_16QAM_demod}. Im Amplitudenfrequenzgang ist die Anpassung durch den Equalizer zu sehen. }\label{fig:aufg2_16QAM_demod_equal}
 \end{figure}
 
 
 \subsection{Diskussion}
+Bei dieser Aufgabenstellung wurden bereitgestellte Daten (breitbandiges Signal), welche laut Aufgabenstellung mittels 16-QAM moduliert und über einen nicht-idealen Kanal mit Bandbegrenzung übertragen worden sind und die entsprechende Konfiguration in die Software \emph{Agilent 89600 Vector Signal Analysis Software} geladen.\\
+Wie in Abbildung \ref{fig:aufg2_16QAM_spec} zu sehen, war das Spektrum ziemlich verrauscht. Um das Spektrum leichter interpretieren zu können wurde das Signal mit der Software und den Einstellungen \emph{Average Type RMS (Video)} und \emph{Count 100} geglättet.\\
+In Abbildung \ref{fig:aufg2_16QAM_spec_avg}, in der das geglättete Spektrum zu sehen ist, erkennt man das die Frequenzen über der Mittenfrequenz (321,4 MHz) mehr gedämpft werden als niedrigere Frequenzen. Weiters treten bei ungefähr 370Mhz und 375MHz hochfrequente Störungen auf, welche herausgefilter werden sollten (mittels Filter im Demodulator).\\
+Die ungleiche Dämpfung der verschiedenen Frequenzanteile des Signals sind Verzerrungen die durch den nicht-idealen Kanal verursacht werden.\\
+\\
+Zur demodulation wurde eine andere Konfiguration geladen.
 \begin{enumerate}
-\item Verzerrungen beurteilen anhand Spektrums, bei höheren Frequenzen hängt das Spektrum, werden etwas gedämpft. Hochfrequenze Störungen sollten gefilter werden
 \item EVM und MagErr aus Bild auslesen.
 \end{enumerate}
 
@@ -303,6 +306,14 @@ DIGITALER MODULATOR???? Keine Ahnung mehr.
 
 
 
+\begin{thebibliography}{9}
+
+\bibitem{skript}
+  Markus Lenzhofer, Paul Meissner, Dr. Klaus Witrisal.
+  \emph{Übung E: Messungen an digitalen Übertragungssystemen}.
+  Technische Universität Graz.
+
+\end{thebibliography}
 
 
  
