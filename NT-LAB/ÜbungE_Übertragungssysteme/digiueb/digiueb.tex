@@ -272,12 +272,14 @@ Es waren keine Tabellen aufzunehmen.
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe4_demod.jpg} 
 \caption{Test}
+\label{fig:a4demod}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe4_Spektrogramm.jpg} 
 \caption{Test}
+\label{fig:spectrogram}
 \end{figure}
 
 
@@ -285,7 +287,24 @@ Es waren keine Tabellen aufzunehmen.
 
 \subsection{Diskussion}
 
-Da haben wir nix dazu augeschrieben!
+Im Spektrogramm (Abbildung: \ref{fig:spectrogram}) sind recht deutlich die verschiiedenen Kanäle, die auf verschiedene Frequenzen aufgeteilt sind, zu erkennen. Zur Bestimmung der Länge eines Bursts haben wir das Spektrogramm im richtigen Zeitpunkt angehalten. Unsere Messung lieferte als Länge eines Frame-Bursts bei GSM $\approx 800 \mu S$. 
+
+Außerdem ist ersichtlich, dass zwischen den einzelnen Bursts Pausen (Guard Periods) im Spektrogramm sind. Diese sind dazu da, dass es zwischen Übertragungen keine Überschneidungen gibt, da es sonst zu Datenverlust führen würde. Die Guard Periods haben eine zeitliche Dauer von $\approx 30 \mu S$.
+
+Entsprechend der Theorie sollte ein Burst eine Dauer von $576.92 \mu S$ (inklusive Guard Period) besitzen. Der Unterschied ist dadurch zu erklären, dass unsere Methode zur Messung (Spektrogramm anzeigen und im richtigen Zeitpunkt anhalten) sehr ungenau ist.
+
+Der Phasenverlauf von GSM aus Abbildung \ref{fig:a4demod} weist keine Knicke oder Unstetigkeiten auf. Zwischen den Symbolen ändert sich die Phase also stetig, so wie es bei GMSK (Gaussian Minimum Shift Keying) sein sollte. Das Konstellationsdiagramm zeigt, dass die Amplitude der Hüllkurve konstant bleibt, da die Amplitude jedes Symbols gleich groß ist (Radius vom Kreis ist konstant).
+
+Das Frequenzspektrum zeigt eine Mittenfrequenz von $331 MHz$ und eine Spanne von $400 kHz$. Aus der Theorie ist bekannt, dass ein Frequenzkanal bei GSM eine Bandbreite von $200 kHz$ besitzt. Im Spektrum aus Abbildung \ref{fig:a4demod} sieht man sehr gut, dass man mit dem verwendeten Modulationsverfahren (GMSK) auch noch Signaleinstreuungen (Adjacent Channel Interference) nach der Bandbreite von $200 kHz$ hat. Deswegen ist zwischen jedem $200 kHz$ Band bei GSM noch ein Guard Band mit einer Bandbreite von $100 kHz$ um das Übersprechen auf einen benachbarten Kanal gering zu halten.
+
+Standardisierte Trägerfrequenzen / Mittenfrequenzen für GSM sind laut Skriptum bei $900 MHz$ bzw. $1800 MHz$. Für unser Messsystem wurde anscheinend keine Standardisierte Trägerfrequenz verwendet.
+
+DIGITALER MODULATOR???? Keine Ahnung mehr.
+
+
+
+
+
  
 
 
