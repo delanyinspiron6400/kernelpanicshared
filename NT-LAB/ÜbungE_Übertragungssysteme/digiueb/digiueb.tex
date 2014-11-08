@@ -141,15 +141,24 @@ Es wurden keine Berechnungen durchgeführt.
 
 \subsection{Diskussion}
 Bei dieser Aufgabenstellung wurden bereitgestellte Daten (breitbandiges Signal), welche laut Aufgabenstellung mittels 16-QAM moduliert und über einen nicht-idealen Kanal mit Bandbegrenzung übertragen worden sind und die entsprechende Konfiguration in die Software \emph{Agilent 89600 Vector Signal Analysis Software} geladen.\\
-Wie in Abbildung \ref{fig:aufg2_16QAM_spec} zu sehen, war das Spektrum ziemlich verrauscht. Um das Spektrum leichter interpretieren zu können wurde das Signal mit der Software und den Einstellungen \emph{Average Type RMS (Video)} und \emph{Count 100} geglättet.\\
+Wie in Abbildung \ref{fig:aufg2_16QAM_spec} zu sehen, war das Spektrum ziemlich verrauscht. Um das Spektrum leichter interpretieren zu können wurde das Signal mit der Software und den Einstellungen \emph{Average Type RMS (Video)} und \emph{Count 100} \cite[23]{skript} geglättet.\\
 In Abbildung \ref{fig:aufg2_16QAM_spec_avg}, in der das geglättete Spektrum zu sehen ist, erkennt man das die Frequenzen über der Mittenfrequenz (321,4 MHz) mehr gedämpft werden als niedrigere Frequenzen. Weiters treten bei ungefähr 370Mhz und 375MHz hochfrequente Störungen auf, welche herausgefilter werden sollten (mittels Filter im Demodulator).\\
 Die ungleiche Dämpfung der verschiedenen Frequenzanteile des Signals sind Verzerrungen die durch den nicht-idealen Kanal verursacht werden.\\
 \\
-Zur demodulation wurde eine andere Konfiguration geladen.
-\begin{enumerate}
-\item EVM und MagErr aus Bild auslesen.
-\end{enumerate}
-
+Zur demodulation und Darstellung des demodulierten Signals wurde ein andere Konfiguration geladen.\\
+In Abbildung \ref{fig:aufg2_16QAM_demod} sind das Konstellationsdiagramm und das Augendiagramm sowie rechts unten Kennwerte zur Signalqualität dargestellt.
+Am Konstellationsdiagramm kann man erkennen, das die empfangenen Symbole nicht genau auf den idealen Konstellationspunkten liegen. Die Abweichungen in I-Richtung (Richtung des Anteils des Symbols in Phase) kann man im Augendiagramm ebenfalls sehen (da sich die verschiedenen Übergänge in jeweils Einem der vier Punkte am Abtastzeitpunkt nicht genau schneiden). Diese Abweichungen sind auf die Verzerrung des Signals und Rauschen am Kanal zurück zu führen.\\
+Bei den Kennwerten kann man eine Error Vector Magnitude (EVM) von 8,27\%rms und eine Message Error Rate (SNR(MER)) von 19,16db ablesen.\\
+\\
+In Abbildung \ref{fig:aufg2_16QAM_demod_equal} ist die gleiche Darstellung wie in Abbildung \ref{fig:aufg2_16QAM_demod} zu sehen, aber der Equalizer wurde an den Kanal angepasst und die Verzerrungen wurden damit beseitigt.\\
+Die Anpassung des Equalizers wurde von der Software durchgeführt. Dazu musste in den Eigenschaften des Demodulators im Reiter Compensate \emph{Equalization Filter} aktiviert und Adaptive auf \emph{Run} gestellt werden \cite[23]{skript}.
+Sobald Adaptive aktiviert war konnte beobachtet werden wie sich der Amplidutenfrequenzgang verändert und die Abweichungen des Signals geringer wurden. Danach wurde Adaptive wieder auf \emph{Hold} gestellt.\\
+\\
+Im Konstellationsdiagramm, nach der Anpassung des Equalizers, kann man fast keine Abweichungen der empfangenen Symbole gegenüber der idealen Konstellationspunkte sehen. Dies spiegelt auch das Augendiagramm, bei dem sich die Übergänge in den jeweiligen Punkten am Abtastzeitpunkt schneiden, wieder.\\
+Die EVM ist durch die Anpassung des Equalizers auf 0,84\%rms gesunken (Verringerung um den Faktor 10) und die SNR(MER) ist auf 38,82db gestiegen (Verbesserung um 19,66db, entspricht zirca einen Faktor von 100).\\
+Der Equalizer beseitigt die Verzerrung des Signals durch den Kanal und man kann erkennen, das das Rauschen am Kanal gering war (da nach dem entzerren nur mehr geringe Abweichungen vorhanden sind).\\
+\\
+Die Übertragungsfunktion des Kanals ist der invertierte Amplitudenfrequenzgang des Equalizers, der in Abbildung \ref{fig:aufg2_16QAM_demod_equal} links unten zu sehen ist.
 
 \pagebreak
 
