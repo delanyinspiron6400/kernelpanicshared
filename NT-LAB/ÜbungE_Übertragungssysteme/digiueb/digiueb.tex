@@ -24,9 +24,9 @@ Das zu analysierende Signal wurde mit einem Vektorsignalgenerator generiert und 
 \subsection{Tabellen}
 Es waren keine Tabellen aufzunehmen. 
 \subsection{Formeln}
-Die Formel für die Nyquist-Frequenz lautet
+Die Symbolrate bei QPSK ergibt sich zu
 \begin{equation}
-f_N = \frac{f_S}{2}
+f_N = \frac{f_S}{2} \quad \Rightarrow \quad f_S = 2 \cdot f_N
 \end{equation}
 Die absolute Bandbreite ergibt sich durch
 \begin{equation}
@@ -34,13 +34,21 @@ B = B_N (1+\alpha)
 \end{equation}
 \pagebreak
 \subsection{Berechnungsbeispiele}
-\begin{enumerate}
-\item Trägerfrequenz: $50MHz$
-\item $f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N$, Differenz $5 MHz = f_N \Rightarrow f_S = 2 \cdot f_N = 10 MHz$
-\item RC- Filter. $B = B_N (1 + \alpha) B = 19Mhz \quad B_N = 10 MHz \Rightarrow \alpha = 0.9$
-\item Symbolrate = 10MHz Format: QPSK
-\end{enumerate}
-\pagebreak
+Aus der Nyquistfrequenz $f_N$ lässt sich die Symbolrate bestimmen
+\begin{equation}
+f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N
+\end{equation}
+Mit $f_N = 5$ MHz lässt sich $f_S$ somit bestimmen als
+\begin{equation}
+f_S = 2 \cdot f_N = 10 \text{ MHz}
+\end{equation}
+Aus der Kenntnis der absoluten Bandbreite $B = 19$ MHz und der Nyquistbandbreite \\ $B_N = 2 \cdot f_N = 10$ MHz lässt sich der Roll-off Faktor $\alpha$ bestimmen
+\begin{equation}
+B = B_N(1+\alpha) = 19 \text{ MHz} \quad \Rightarrow \quad \alpha = \frac{B}{B_N} -1 = 0.9
+\end{equation}
+
+
+
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
@@ -53,8 +61,34 @@ B = B_N (1+\alpha)
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_avg.jpg} 
-\caption{Signal gemittelt in Frequenz- und Zeitbereich}
+\caption{Signal geglättet in Frequenz- und Zeitbereich}
 \label{fig:1_sig_avg}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_fs.jpg} 
+\caption{Ermittelung von $f_N$ mittels Software-Marker}
+\label{fig:1_fn}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_demod.jpg} 
+\caption{Konstellationsdiagramm des Signals}
+\label{fig:1_konst}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_demod_i_eye.jpg} 
+\caption{Augendiagramm des Signals}
+\label{fig:1_auge}
 \end{figure}
 
 \pagebreak
@@ -62,40 +96,17 @@ B = B_N (1+\alpha)
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_B.jpg} 
-\caption{Ermittlung von $f_N$ mittels Marker}
-\label{fig:1_}
+\caption{Ermittlung von $B_N$ mittels Software-Marker}
+\label{fig:1_bn}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_demod.jpg} 
-\caption{Konstellationsdiagramm des Signals}
-\end{figure}
 
-\pagebreak
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_demod_i_eye.jpg} 
-\caption{Augendiagramm des Signals}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK_fs.jpg} 
-\caption{Test}
-\end{figure}
-\pagebreak
 
 \subsection{Diskussion}
-Die Trägerfrequenz lässt sich in der Software ermitteln, diese ergibt sich zu $50$ MHz. Nach einer Mittlung des Signals lässt sich auch die Symbolrate bestimmen, diese ist das Doppelte der Nyquistfrequenz $f_N$. 
-\begin{enumerate}
-\item Trägerfrequenz: $50MHz$
-\item $f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N$, Differenz $5 MHz = f_N \Rightarrow f_S = 2 \cdot f_N = 10 MHz$
-\item RC- Filter. $B = B_N (1 + \alpha) B = 19Mhz \quad B_N = 10 MHz \Rightarrow \alpha = 0.9$
-\item Symbolrate = 10MHz Format: QPSK
-\end{enumerate}
-Aus Augendiagramm erkennbar, Linien sauber in einem Punkt geschnitten
+Gegeben war ein mittels QPSK auf einen HF-Träger moduliertes, breitbandiges Signal, welches mit der Software \textit{Agilent 89600 Vector Signal Analysis Software} demoduliert werden sollte. In Abbildung \ref{fig:1_sig} sieht man das demodulierte Signal, um Aussagen und Messungen zu erleichtern, wurde das Signal in Software mit den Einstellungen \textit{Average Type RMS (Video)} und \textit{Count 100}\cite{skript} geglättet, dies führt zu Abbildung \ref{fig:1_sig_avg}. \\
+Somit lies sich dann die Trägerfrequenz bestimmen in Software mittels Markerplazierung an der höchsten Signalamplitude, diese ergab sich zu $50$ MHz.\\ Um die Symbolrate zu bestimmen, wurde wiederum mittels Markerplazierung $f_N$ bestimmt, die Differenz zwischen höchster Signalamplitude und dem Abfall um $3dB$ ergibt die Nyquistfrequenz, bei QPSK erhält man aus dem Zweifachen der Nyquistfrequenz die Symbolrate, beim gegebenen Signal ergab sich diese zu $10$ MHz. \\
+Als Filtertyp empfängerseitig wurde ein RC-Filter eingestellt, diese Wahl bestätigte sich bei Überprüfung des Augendiagramms, in Abbildung \ref{fig:1_bn} gut ersichtlich sind klare Schnittpunkte der Übergänge zwischen den Symbolen, welche auf eine richtige Wahl der Filter-Parameter schließen lassen. \\ 
+Der Roll-off Faktor $\alpha$ ergab sich zu $0.9$, somit erhält man für die absolute Bandbreite den Wert $19$ MHz. Bei Variation des Roll-off Faktors konnte man eine klare Verschlechterung des Augendiagramms erkennen, die Wahl der Filterparameter bestätigte sich dadurch.
 
 
 \pagebreak
@@ -104,7 +115,7 @@ Aus Augendiagramm erkennbar, Linien sauber in einem Punkt geschnitten
 
 \section{Kanalverzerrungen / Equalizer}
 \subsection{Aufgabenstellung}
-Ein mittels 16-QAM moduliertes breitbandiges Signal wird über einen nicht-idealen Kanal mit Bandbegrenzung übertragen. Es sollen die entstandenen Verzerrungen mit einem Equalizer entfernt werden. Weiters soll die Übertragunsfunktion des Kanals dargestellt werden. 
+Ein mittels 16-QAM moduliertes breitbandiges Signal wird über einen nicht-idealen Kanal mit Bandbegrenzung übertragen. Es sollen die entstandenen Verzerrungen mit einem Equalizer entfernt werden. Weiters soll die Übertragungsfunktion des Kanals dargestellt werden. 
 \begin{itemize}
 \item Beurteilen Sie die Verzerrungen anhand des Spektrums.
 \item Versuchen Sie, das verzerrte 16-QAM-Signal zu demodulieren. Stellen Sie Augen- und Konstellationsdiagramm dar. Beurteilen Sie anhand dieser Darstellungen die Signalqualität (beachten Sie auch Kenngrößen wie EVM und MER).
