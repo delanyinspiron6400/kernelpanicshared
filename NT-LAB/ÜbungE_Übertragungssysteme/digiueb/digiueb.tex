@@ -19,8 +19,10 @@ Gegeben ist ein Signal, welches mittels QPSK auf einen HF-Träger moduliert wurd
 \item Demodulieren Sie das Signal. Stellen Sie Konstellations- und Augendiagramm sowie das Spektrum des Signals dar. 
 \item Woran ist erkennbar, dass der richtige Filtertyp gefunden wurde. Überprüfen Sie ihre Antwort durch Veränderung der Einstellungen
 \end{itemize}
+\cite[18]{skript}
+
 \subsection{Messaufbau}
-Das zu analysierende Signal wurde mit einem Vektorsignalgenerator generiert und mit dem Oszilloskop für die Analyse digitalisiert.  
+Es wurde kein Messaufbau benötigt.
 \subsection{Tabellen}
 Es waren keine Tabellen aufzunehmen. 
 \subsection{Formeln}
@@ -40,11 +42,11 @@ f_N = \frac{f_S}{2} \Rightarrow f_S = 2 \cdot f_N
 \end{equation}
 Mit $f_N = 5$ MHz lässt sich $f_S$ somit bestimmen als
 \begin{equation}
-f_S = 2 \cdot f_N = 10 \text{ MHz}
+f_S = 2 \cdot f_N = 2 \cdot 5 \text{ MHz} = 10 \text{ MHz}
 \end{equation}
-Aus der Kenntnis der absoluten Bandbreite $B = 19$ MHz und der Nyquistbandbreite \\ $B_N = 2 \cdot f_N = 10$ MHz lässt sich der Roll-off Faktor $\alpha$ bestimmen
+Aus der Kenntnis der absoluten Bandbreite $B = 19$ MHz und der Nyquistbandbreite \\ $B_N = 2 \cdot f_N = 2 \cdot 5 \text{ MHz} = 10$ MHz lässt sich der Roll-off Faktor $\alpha$ bestimmen
 \begin{equation}
-B = B_N(1+\alpha) = 19 \text{ MHz} \quad \Rightarrow \quad \alpha = \frac{B}{B_N} -1 = 0.9
+B = B_N(1+\alpha) = 19 \text{ MHz} \quad \Rightarrow \quad \alpha = \frac{B}{B_N} -1 = \frac{19 \text{ MHz}}{10 \text{ MHz}} -1 = 0.9
 \end{equation}
 
 
@@ -103,8 +105,8 @@ B = B_N(1+\alpha) = 19 \text{ MHz} \quad \Rightarrow \quad \alpha = \frac{B}{B_N
 
 
 \subsection{Diskussion}
-Gegeben war ein mittels QPSK auf einen HF-Träger moduliertes, breitbandiges Signal, welches mit der Software \textit{Agilent 89600 Vector Signal Analysis Software} demoduliert werden sollte. In Abbildung \ref{fig:1_sig} sieht man das demodulierte Signal, um Aussagen und Messungen zu erleichtern, wurde das Signal in Software mit den Einstellungen \textit{Average Type RMS (Video)} und \textit{Count 100}\cite{skript} geglättet, dies führt zu Abbildung \ref{fig:1_sig_avg}. \\
-Somit lies sich dann die Trägerfrequenz bestimmen in Software mittels Markerplazierung an der höchsten Signalamplitude, diese ergab sich zu $50$ MHz.\\ Um die Symbolrate zu bestimmen, wurde wiederum mittels Markerplazierung $f_N$ bestimmt, die Differenz zwischen höchster Signalamplitude und dem Abfall um $3dB$ ergibt die Nyquistfrequenz, bei QPSK erhält man aus dem Zweifachen der Nyquistfrequenz die Symbolrate, beim gegebenen Signal ergab sich diese zu $10$ MHz. \\
+Gegeben war ein mittels QPSK auf einen HF-Träger moduliertes, breitbandiges Signal, welches mit der Software \textit{Agilent 89600 Vector Signal Analysis Software} demoduliert werden sollte. In Abbildung \ref{fig:1_sig} sieht man das Signal. Um Aussagen und Messungen zu erleichtern, wurde das Signal in Software mit den Einstellungen \textit{Average Type RMS (Video)} und \textit{Count 100} \cite[23]{skript} geglättet, dies führt zu Abbildung \ref{fig:1_sig_avg}. \\
+Somit lies sich dann die Trägerfrequenz in Software mittels Markerplazierung an der höchsten Signalamplitude bestimmen, diese ergab sich zu $50$ MHz.\\ Um die Symbolrate zu bestimmen, wurde wiederum mittels Markerplazierung $f_N$ bestimmt (siehe Abbildung \ref{fig:1_fn}), die Differenz zwischen höchster Signalamplitude und dem Abfall um $3dB$ ergibt die Nyquistfrequenz. Bei QPSK erhält man aus dem Zweifachen der Nyquistfrequenz die Symbolrate, beim gegebenen Signal ergab sich diese zu $10$ MHz. \\
 Als Filtertyp empfängerseitig wurde ein RC-Filter eingestellt, diese Wahl bestätigte sich bei Überprüfung des Augendiagramms, in Abbildung \ref{fig:1_bn} gut ersichtlich sind klare Schnittpunkte der Übergänge zwischen den Symbolen, welche auf eine richtige Wahl der Filter-Parameter schließen lassen. \\ 
 Der Roll-off Faktor $\alpha$ ergab sich zu $0.9$, somit erhält man für die absolute Bandbreite den Wert $19$ MHz. Bei Variation des Roll-off Faktors konnte man eine klare Verschlechterung des Augendiagramms erkennen, die Wahl der Filterparameter bestätigte sich dadurch.
 
