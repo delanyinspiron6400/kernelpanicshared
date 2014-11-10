@@ -1,0 +1,89 @@
+\documentclass[12pt,a4paper,ngerman]{article}
+\usepackage{stylesheet}
+\begin{document}
+\include{titlepage}
+
+%-------------------------------------------------------------------------------
+%
+% Beginn des Protokolls
+%
+%-------------------------------------------------------------------------------
+
+\section*{Aufgabe 1}
+
+
+\begin{framed}
+\textbf{I$^2$C Anwendungsbeispiel}\\
+Sie haben einen Controller gebaut, welcher die Funktion einer Wendeschützschaltung übernimmt. Der Controller verfügt neben für den "Inselbetrieb" notwendigen Eingängen über eine I$^2$C Schnittstelle. Diese Schnittstelle erlaubt es, zusätzliche Parameter einzustellen, beziehungsweise Betriebszustände (Fehlermeldungen) abzufragen. Erklären Sie
+\begin{enumerate}
+\item Wie sieht ihr Controller aus (Skizze mit Interface)?
+\item Arbeitet er als Master oder Slave?
+\item Erklären Sie die Register ihres Controllers bzw. deren Funktion?
+\item Wie funktioniert die Steuerung des Controllers über I$^2$C Bus (Beispiel)?
+\end{enumerate}
+\end{framed}
+
+\pagebreak
+\section*{Aufgabe 2}
+
+
+\begin{framed}
+\textbf{I$^2$C Bus-Arbitrierung}\\
+Zeigen Sie anhand vpn Beispielen wie die Arbitrierung am I$^2$C Bus für 2 Master funktioniert, wenn die Master Write-Befehle an Slaves schicken. Geben Sie für folgende Situationen jeweils ein Beispiel an:
+\begin{enumerate}
+\item unterschiedliche Zieladresse und unterschiedliche Daten
+\item gleiche Zieladresse und unterschiedliche Daten
+\item gleiche Zieladresse und gleiche Daten
+\end{enumerate}
+Zeigen Sie, welche Daten am Bus gesendet werden und wann sich welcher Master zurückzieht und begründen Sie dies.
+\end{framed}
+
+\pagebreak
+
+\section*{Aufgabe 3}
+
+
+\begin{framed}
+\textbf{I$^2$C-Bus vs. SPI-Bus}\\
+Bussysteme spielen eine wichtige Rolle in eingebettenen Systemen. Ermitteln Sie deshalb bedeutende Kenngrößen zu deren Vergleich und identifizieren Sie dies sowohl für den I$^2$C- als auch für den SPI-Bus. \\
+Beschreiben Sie zusätzlich die Zugriffsmethoden für obige Bussysteme und stellen Sie den Ablauf eine Buszyklus dar (Write und Read zwischen Master und Slave). Begründen Sie auch, ob obige Bussysteme mit mehreren Masterknoten verwendet werden können.
+\end{framed}
+
+\pagebreak
+
+\section*{Aufgabe 4}
+
+
+\begin{framed}
+\textbf{ZigBee}\\
+Was genau ist ZigBee und worin liegen die Unterschiede zu Bluetooth? ZigBee unterstützt den sogenannten "Beacon Mode". Worum genau handelt es sich dabei und was ist ein Beacon? Wie funktioniert die Übertragung im Beacon Mode? Geben Sie ein Beispiel dazu an?
+\end{framed}
+
+\pagebreak
+
+\section*{Aufgabe 5}
+
+
+\begin{framed}
+\textbf{Schaltnetzwerke}\\
+Zeigen Sie wie der Unterschied der Komplexität (Anzahl nötiger Schaltelemente) zwischen einer Corssbar und einer mehrstufigen Butterfly-Schaltnetzwerk zustande kommt.
+Zur Erinnerung: Ein Crossbar-Switch hat Komplexität $O(n^2)$ im Vergleich zu einem Butterfly-Netzwerk $O(nlog(n)$, um $n$ Knoten miteinander zu verbinden. 
+\end{framed}
+
+\pagebreak
+
+\section*{Aufgabe 6}
+
+
+\begin{framed}
+\textbf{CAN Bus}\\
+Machen Sie sich mit dem Aufbau eines CAN Daten-Frames vertraut und erarbeiten Sie eine Formel zur Bestimmung der maximalen Netto-Datenrate $R(D,E,p)$ für die Nutzdaten in Abhängigkeit von DLC $D \in \{0,8\}$ byte, Extenden bit $E \in \{0,1\}$ und Busgeschwindigkeit in $p$ in bit/s. Geben Sie anschließend eine Formel zur Bestimmung des zugehörigen Protokoll-Overheads $\rho (D,E)$ an. \\
+Bestimmen Sie $R(8,1,500000),R(8,0,500000)$ sowie alle möglichen Werte für $\rho$. \\
+Wie muss die Formel für $R$ hinsichtlich der zu erwartenden Netto-Datenrate $R_{exp}(D,E,\rho, \alpha)$ verändert werden, wenn mit einer Paketfehlerwahrscheinlichkeit $\alpha \in [0,1]$ zu rechnen ist, die jeweils den Neuversand des kompletten betroffenen Daten-Frames erfordert? 
+\end{framed}
+
+
+
+   
+   
+\end{document}
