@@ -38,6 +38,21 @@ Zeigen Sie anhand vpn Beispielen wie die Arbitrierung am I$^2$C Bus für 2 Maste
 Zeigen Sie, welche Daten am Bus gesendet werden und wann sich welcher Master zurückzieht und begründen Sie dies.
 \end{framed}
 
+Arbitrierung von zwei oder mehreren Mastern auf dem I2C-Bus:\\
+\\
+Ein Master darf nur mit einer Übertragung starten wenn der Bus gerade frei ist.\\
+Zwei oder mehrere Master können gleichzeitig starten wenn sie die Start-Condition innerhalb der minimum hold time senden.\\
+Jeder Master kontrolliert bei jedem gesendeten Bit (während die SCL high ist) ob auf der SDA-Leitung der Pegel anliegt den er gesendet hat. Wenn ein anderer Pegel anliegt (nur bei gesendet HIGH aber auf SDA LOW möglich - wired-AND) beendet der Master sofort die Übertragung und der andere Master kann seine Übertragung weiter durchführen.\\
+Die Arbitrierung kann den ganzen Sendevorgang dauern, wenn beide Master an die selbe Adresse die selben Daten senden.\\
+\\
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.72]{figures/Aufgabe_3_2_arbitrierung.jpg} 
+\caption{Arbitrierung}
+\end{center}
+\vspace{-20pt}
+\end{figure}\\
+
 \pagebreak
 
 \section*{Aufgabe 3}
@@ -75,7 +90,7 @@ Beschreiben Sie zusätzlich die Zugriffsmethoden für obige Bussysteme und stell
   \caption{Vergleichskriterien}
 \end{table}
 Der wesentliche Unterschied besteht darin, dass I$^2$C den Busverkehr über 2 Leitungen abhandelt, während SPI die Selektion über eine extra Chip-Select Leitung vornimmt. \\
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.5]{figures/i2c.png} 
 \caption{I$^2$C}
