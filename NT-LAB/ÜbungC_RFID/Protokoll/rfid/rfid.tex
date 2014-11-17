@@ -168,7 +168,9 @@ Aus diesen Werten ist ersichtlich, das die Anstiegszeit für höhere Güten grö
 Bei dieser Aufgabe soll der Frequenzgang beider Antennen (Q = 5, Q = 50) von 12MHz bis 15MHz aufgenommen werden.\\
 
 \subsection{Messaufbau}
-Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den Verstärker und Dämpfer an die jeweilige Antenne angeschlossen. 
+Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den Verstärker und Dämpfer an die jeweilige Antenne angeschlossen.
+Die Antenne wurde mittig in den ISO-Aufbau eingebracht, auf einer Seite (der Helmholtz-Anordnung) wurde die Referenzspule befestigt. 
+Die induzierte Spannung an der Referenzspule wurde auf einem Oszilloskop dargestellt. 
 
 \subsection{Tabellen}
 \begin{table}[H]
@@ -232,15 +234,32 @@ Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den 
   $15$ & $0.653$ & $0.887$ & $0.713$ & $0.987$ \\
       \hline
 \end{tabular}
-\caption{Test}
+\caption{Gemessene Spannung und berechnete Feldstärke über die Frequenz}
+\label{tab:2}
 \end{center}
 \end{table}
 \subsection{Formeln}
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ m^2$.
+\begin{equation}
+U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
+\end{equation}
 
-\subsection{Berechnungsbeispiele}
-
-
+Zusammenhang zwischen Spitze-Spitze-Spannung und dem Effektivwert der Spannung.
+\begin{equation}
+U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
+\end{equation}
 \pagebreak
+\subsection{Berechnungsbeispiele}
+Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:2} Zeile 1 entnommen.
+\begin{equation}
+U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{0.363V}{\sqrt{2}  \cdot 2} = 0.1283 V
+\end{equation}
+
+\begin{gather}
+H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
+\frac{0.1283V}{2\pi \cdot 12MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072m \cdot 0,042m} = 0.448\frac{A}{m}
+\end{gather}
+
 \subsection{Diagramme}
 %\begin{figure}[H]
 %\centering
@@ -250,6 +269,11 @@ Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den 
 
 
 \subsection{Diskussion}
+Am Funktionsgenerator wurden 13.56MHz und eine Amplitude von 100mV eingestellt. Der Verstärker wurde so eingestellt, das am Oszilloskop $2.77$V Spitze-Spitze-Spannung abzulesen waren. 
+Dies entspricht einer Feldstärke von $3 \frac{\text{A}}{\text{m}}$. \\
+Während der Messung wurde der Frequenzgenerator von 12-15MHz in 200kHz Schritten verstellt und dabei die Spitze-Spitze-Spannung am Oszilloskop abgelesen. Um die Resonanzfrequenz wurden mehrere Werte in einem engeren Abstand von 50kHz abgelesen (13.2-13.8MHz).
+Diese Messung wurde für beide Antennen durchgeführt. \\
+Für die Antenne mit der Güte 50 erkennt man rund um die Resonanzfrequenz einen starken Anstieg der magnetischen Feldstärke und genau auf der Resonanzfrequenz den Maximalwert von $3.025\frac{\text{A}}{\text{m}}$. Für die Antenne mit der Güte 5 sieht man einen flacheren Verlauf der Kurve, der Maximalwert liegt bei $0.982\frac{\text{A}}{\text{m}}$. Dieser ist allerdings bei 13.56 MHz zu finden, sondern bei 13.95MHz, da die Antenne in dem Aufbau leicht verstimmt war. Außerdem war zu sehen, das die Antenne mit niedrigerer Güte bei gleichem Aufbau und Verstärkung nur mehr $\frac{1}{3}$ der Feldstärke erzeugt. \\
 
 \pagebreak
 
@@ -405,7 +429,6 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
   \emph{Übung C: RFID}\\
   Technische Universität Graz
 \end{thebibliography}
-
 
  
 
