@@ -321,58 +321,78 @@ Als Signalquelle
 
 \section{Seitenbandpegel der Rückmodulation}
 \subsection{Aufgabenstellung}
-Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmodulation vom Transponder zu ermitteln. Hierfür wurde die Helmholz-Anordnung verwendet. Mit Hilfe des Verstärkers wurden die Seitenbänder bei einer magnetischen Feldstärke von 1-6A/m eingestellt. 
-\begin{itemize}
-\item???.
-\end{itemize}
-
+Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmodulation vom Transponder zu ermitteln. Hierfür soll die Helmholz-Anordnung verwendet werde. Mit Hilfe des Verstärkers soll die magnetische Feldstärke am Referenz-PICC von 1-6 A/m eingestellt werden. Danach soll eine ISO 14443 Karte in das Feld gebracht und ein Kommando über die PC-Software geschickt werden. Mit Hilfe der Helmholtz-Anordnung wird die Transponder-Antwort mit dem Oszilloskop aufgenommen. Die Amplituden der Seitenbänder werden mit Hilfe eines Oszilloskop-Screenshots und einer FFT-Software berechnet. 
 
 \subsection{Messaufbau}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/aufbau4.png} 
+\caption{Messaufbau zu Aufgabe 4, entnommen aus Skript \cite[S.39 Abbildung 42]{skript}}
+\label{fig:aufbau4}
+\end{figure}
+
 \subsection{Tabellen}
-\begin{tabular}{ |c|c|c| }
+\begin{tabular}{ |c|c|c|c| }
   \hline
 
-    H(rms)) & $U_i(pp) oberes Seitenband$ & $U_i(pp) unteres Seitenband$\\
+    $U_{pp}$ & H(rms)) & $U_i(pp) oberes Seitenband$ & $U_i(pp) unteres Seitenband$\\
 
-	[A/m] & [mV] & [mV] \\
+	 [V] & [A/m] & [mV] & [mV] \\
   \hline
-  $0.997$ & $320.6$ & $41.95$\\
+  $0.913$ & $0.997$ & $320.6$ & $41.95$\\
   \hline
-  $1.9984$ & $866.21$ & $727.24$ \\
+  $1.83$ & $1.9984$ & $866.21$ & $727.24$ \\
   \hline
-  $3.003$ & $158.54$ & $32.35$\\
+  $2.75$ & $3.003$ & $158.54$ & $32.35$\\
   \hline
-  $4.0295$ & $218.7$ & $312.14$\\
+  $3.69$ & $4.0295$ & $218.7$ & $312.14$\\
     \hline
-  $5.0123$ & $175.37$ & $61.54$\\
+  $4.59$ & $5.0123$ & $175.37$ & $61.54$\\
     \hline
-  $6.0388$ & $323.9$ & $267.93$ \\
+  $5.53$ & $6.0388$ & $323.9$ & $267.93$ \\
     \hline
   \hline
  
 \end{tabular} 
 \subsection{Formeln}
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
+\begin{equation}
+U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
+\end{equation}
+
+Zusammenhang zwischen Spitze-Spitze-Spannung und dem Effektivwert der Spannung.
+\begin{equation}
+U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
+\end{equation}
 
 \subsection{Berechnungsbeispiele}
+Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:1} Zeile 1 entnommen.
+\begin{equation}
+U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{0.913V}{\sqrt{2}  \cdot 2} = 0.323V
+\end{equation}
+
+\begin{gather}
+H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
+\frac{0.323V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072mm \cdot 0,042mm} = 0.997 \frac{A}{m}
+\end{gather}
 
 \subsection{Diagramme}
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.9\textwidth]{figures/Aufgabe4_demod.jpg} 
-%\caption{Konstellationsdiagramm, Trellis-Eye, Spektrum, Kennwerte des demodulierten GSM-Signals}
-%\label{fig:a4demod}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/a4.eps} 
+\caption{Seitenbandpegel bei verschiedenen Feldstärken im Vergleich zur ISO-Norm-Kurve}
+\label{fig:a4}
+\end{figure}
 
 \subsection{Diskussion}
 
 \begin{thebibliography}{9}
 
 \bibitem{skript}
-  Markus Lenzhofer, Paul Meissner, Dr. Klaus Witrisal.
-  \emph{Übung E: Messungen an digitalen Übertragungssystemen}.
-  Technische Universität Graz.
-
+  Teresa Meier, Dipl.-Ing. Georg Egger, Dipl.-Ing. Dr Michael Gebhart\\
+  \emph{Übung C: RFID}\\
+  Technische Universität Graz
 \end{thebibliography}
 
 
