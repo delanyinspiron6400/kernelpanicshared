@@ -11,25 +11,23 @@
 
 \section{Rückwirkungsfreie Messung des H-Feldes zweier PCD-Schleifenantennen mit unterschiedlichen Güten}
 \subsection{Aufgabenstellung}
-Der Zweck dieser Übung besteht darin, Energie- und Informatuonsübertragung (Von Lesegerät zu Transponder-Karte) für RFID-Systeme in Abhängigkeit der Güte der PCD-Sendeantenne deutlich zu machen. Bei gleicher Treiberleitsung kann man mit einer höheren Antennengüte eine höhere H-Feldstärke erreichen, verliert jedoch in der zeitlichen Auflösung von Pulsen, dies bedeutet eine geringere mögliche Datenrate. 
-\begin{itemize}
-\item Nehmen Sie hierfür bei zwei Antennen, unterschiedlicher Güte, die Feldstärke in Abhängigkeit der Distanz auf.
-\item Nehmen Sie die Anstiegszeiten bei beiden Antennen auf.
-\end{itemize}
-%\cite[18]{skript}
+Bei dieser Aufgabe sollten zwei Antennen mit unterschiedlicher Güte (5, 50) miteinander verglichen werden. Dazu soll die magnetische Feldstärke in Abhängigkeit von der Entfernung zur Antenne gemessen werden (in 5mm Schritten, von 0 bis 14cm).\\
+Weiters soll die Anstiegszeit des Sendesignals, von 10\% auf 90\% der Trägersignalamplitude, für beide Antennen bestimmt werden.
 
 \subsection{Messaufbau}
+Für den Messaufbau wurde ein speziell dafür modifizierter RFID-Reader mit regelbarer Ausgangsamplitude verwendet. Dieser wurde an einen Computer und einen Verstärker angeschlossen. Zwischen Verstärker und zu vermessender Antenne wurde ein Dämpfer (6db) eingebaut.\\
+Die Antenne und die zur Messung verwendete Referenzspule wurden in einen verstellbaren Distanzhalter platziert. Zur Messung wurde die Referenzspule an ein Oszilloskop angeschlossen.
 
 \subsection{Tabellen}
-
-\centering
+\begin{center}
 \begin{tabular}{ |c|c|c|c|c| }
+\centering
   \hline
      & Q=50 & Q=5 & Q=50 & Q=5\\
 
     Distanz & $U_i(pp)$ & $U_i(pp)$ & H(rms) & H(rms)\\
 
-  [mm] & [V] & [V] & [A/m] & [A/m] \\
+  [cm] & [V] & [V] & [A/m] & [A/m] \\
   \hline
   0 & $2.9$ & $0.894$ & $3.167$ & $0.976$ \\
   \hline
@@ -89,28 +87,31 @@ Der Zweck dieser Übung besteht darin, Energie- und Informatuonsübertragung (Vo
         \hline
   $14$ & $0.29$ & $0.425$ & $0.317$ & $0.464$ \\
   \hline
- 
+\label{tab:1}
 \end{tabular}
+\end{center}
 
 \subsection{Formeln}
-
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
 \begin{equation}
-U_{ind} = 2 \cdot  \pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot H \cdot A
+U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
 \end{equation}
 
+Zusammenhang zwischen Spitze-Spitze-Spannung und dem Effektivwert der Spannung.
 \begin{equation}
-U_{SS} = \sqrt{2}  \cdot 2 \cdot U_{ind}
+U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
 \end{equation}
 \pagebreak
 \subsection{Berechnungsbeispiele}
-
+Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:1} Zeile 1 entnommen.
 \begin{equation}
-U_{ind} = 2 \cdot  \pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot H \cdot A
+U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{2,9V}{\sqrt{2}  \cdot 2} = 1,025V
 \end{equation}
 
-\begin{equation}
-U_{SS} = \sqrt{2}  \cdot 2 \cdot U_{ind}
-\end{equation}
+\begin{align}
+H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
+\frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072mm \cdot 0,042mm} = 3,167\frac{A}{m}
+\end{align}
 
 \subsection{Diagramme}
 %\begin{figure}[H]
