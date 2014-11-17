@@ -10,4 +10,4 @@ u0 = 4*pi*10^-7
 ur = 1 %luft
 
 A = 0.072*0.042 % 72mm x 42mm
-hrms = uind / (2*pi * fr * u0 * ur * A)
+hrmsq50 = uind ./ (2*pi * freq * u0 * ur * A *10^6)

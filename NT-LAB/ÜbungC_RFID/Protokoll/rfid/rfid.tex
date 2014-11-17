@@ -95,7 +95,7 @@ Die Antenne und die zur Messung verwendete Referenzspule wurden in einen verstel
 \end{table}
 \pagebreak
 \subsection{Formeln}
-Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ m^2$.
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13.56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0.072 \cdot 0.042\ m^2$.
 \begin{equation}
 U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
 \end{equation}
@@ -108,12 +108,12 @@ U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
 \subsection{Berechnungsbeispiele}
 Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:1} Zeile 1 entnommen.
 \begin{equation}
-U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{2,9V}{\sqrt{2}  \cdot 2} = 1,025V
+U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{2.9V}{\sqrt{2}  \cdot 2} = 1.025V
 \end{equation}
 
 \begin{gather}
 H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
-\frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072m \cdot 0,042m} = 3,167\frac{A}{m}
+\frac{1.025V}{2\pi \cdot 13.56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0.072m \cdot 0.042m} = 3.167\frac{A}{m}
 \end{gather}
 
 \subsection{Diagramme}
@@ -149,11 +149,11 @@ Diese Spannung kann mit den oben angeführten Formeln in die magnetische Feldst�
 Die gemessenen und berechneten Werte wurden in einem Diagramm (Abbildung \ref{fig:1_q5}) dargestellt.\\
 Die magnetische Feldstärke ist bei der Antenne mit der Güte Q=50 bis zu einer Entfernung von 10cm höher.\\
 \\
-Zur Messung der Anstiegszeit wurde beim Oszilloskop der Single-Shot-Modus und Triggern an der fallenden Flanke mit nachfolgender Pause von $1,5\mu s$ eingestellt.\\
+Zur Messung der Anstiegszeit wurde beim Oszilloskop der Single-Shot-Modus und Triggern an der fallenden Flanke mit nachfolgender Pause von $1.5\mu s$ eingestellt.\\
 Der Reader wurde über die Reader-Software am Computer zum Senden eines Lesebefehls veranlasst, welcher an der Referenzspule und somit am Oszilloskop die zum Triggern benötigte negative Flanke und nachfolgende Pulsbreite (Pause) erzeugt.\\
 Nach dieser Pause steigt die Amplitude des Signals wieder auf die Amplitude des Trägersignals an. Die Zeit für diesen Anstieg von 10\% auf 90\% der Signalamplitude wurde mittels Marker am Oszilloskop gemessen.\\
 \begin{itemize}
-\item Antenne Q = 50: $1,24\mu s$
+\item Antenne Q = 50: $1.24\mu s$
 \item Antenne Q = 5:  $204ns$
 \end{itemize}
 Aus diesen Werten ist ersichtlich, das die Anstiegszeit für höhere Güten größer wird. Somit kann mit Antenne mit höherer Güte zwar eine größere Reichweite aber eine geringere Datenrate erzielt werden.
@@ -176,60 +176,59 @@ Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den 
 \begin{tabular}{ |c|c|c|c|c| }
   \hline
      & Q=50 & Q=5 & Q=50 & Q=5\\
-
     Frequenz & $U_i(pp)$ & $U_i(pp)$ & H(rms) & H(rms)\\
 
   [MHz] & [V] & [V] & [A/m] & [A/m] \\
   \hline
-  12 & $0.363$ & $0.5$ & $0.396$ & $0.546$ \\
+  12 & $0.363$ & $0.5$ & $0.4479$ & $0.6170$ \\
   \hline
-  $12.2$ & $0.425$ & $0.575$ & $0.464$ & $0.628$ \\
+  $12.2$ & $0.425$ & $0.575$ & $0.5158$ & $0.6979$ \\
   \hline
-  $12.4$ & $0.5$ & $0.6$ & $0.546$ & $0.655$ \\
+  $12.4$ & $0.5$ & $0.6$ & $0.5971$ & $0.7165$ \\
   \hline
-  $12.6$ & $0.784$ & $0.813$ & $0.856$ & $0.888$ \\
+  $12.6$ & $0.784$ & $0.813$ & $0.9214$ & $0.9554$ \\
     \hline
-  $12.8$ & $1$ & $0.844$ & $1.092$ & $0.922$ \\
+  $12.8$ & $1$ & $0.844$ & $1.1568$ & $0.9764$ \\
     \hline
-  $13$ & $1.3$ & $0.869$ & $1.419$ & $0.949$ \\
+  $13$ & $1.3$ & $0.869$ & $1.4808$ & $0.9898$ \\
     \hline
-  $13.2$ & $1.78$ & $0.887$ & $1.944$ & $0.969$ \\
+  $13.2$ & $1.78$ & $0.887$ & $1.9968$ & $0.9950$ \\
      \hline
-  $13.25$ & $1.97$ & $0.894$ & $2.151$ & $0.976$ \\ 
+  $13.25$ & $1.97$ & $0.894$ & $2.2016$ & $0.9991$ \\ 
     \hline
-  $13.3$ & $2.14$ & $0.9$ & $2.337$ & $0.983$ \\
+  $13.3$ & $2.14$ & $0.9$ & $2.3826$ & $1.0020$ \\
     \hline
-  $13.35$ & $2.31$ & $0.906$ & $2.523$ & $0.989$ \\
+  $13.35$ & $2.31$ & $0.906$ & $2.5622$ & $1.0049$ \\
     \hline
-  $13.4$ & $2.5$ & $0.906$ & $2.73$ & $0.989$ \\
+  $13.4$ & $2.5$ & $0.906$ & $2.7626$ & $1.0012$ \\
     \hline
-  $13.45$ & $2.64$ & $0.906$ & $2.883$ & $0.989$ \\
+  $13.45$ & $2.64$ & $0.906$ & $2.9065$ & $0.9974$ \\
     \hline
-  $13.5$ & $2.73$ & $0.913$ & $2.981$ & $0.997$ \\
+  $13.5$ & $2.73$ & $0.913$ & $2.9944$ & $1.0014$ \\
      \hline
-  $13.55$ & $2.76$ & $0.913$ & $3.014$ & $0.997$ \\
+  $13.55$ & $2.76$ & $0.913$ & $3.0162$ & $0.9977$ \\
       \hline
-  $13.6$ & $2.7$ & $0.913$ & $2.948$ & $0.997$ \\ 
+  $13.6$ & $2.7$ & $0.913$ & $2.9397$ & $0.9941$ \\ 
       \hline
-  $13.65$ & $2.61$ & $0.919$ & $2.85$ & $1.004$ \\
+  $13.65$ & $2.61$ & $0.919$ & $2.8313$ & $0.9969$ \\
       \hline
-  $13.7$ & $2.45$ & $0.925$ & $2.675$ & $1.01$ \\
+  $13.7$ & $2.45$ & $0.925$ & $2.6481$ & $0.9998$ \\
       \hline
-  $13.75$ & $2.31$ & $0.925$ & $2.523$ & $1.01$ \\
+  $13.75$ & $2.31$ & $0.925$ & $2.4877$ & $0.9961$ \\
       \hline
-  $13.8$ & $2.14$ & $0.925$ & $2.337$ & $1.01$ \\
+  $13.8$ & $2.14$ & $0.925$ & $2.2962$ & $0.9925$ \\
       \hline
-  $14$ & $1.59$ & $0.925$ & $1.736$ & $1.01$ \\
+  $14$ & $1.59$ & $0.925$ & $1.6817$ & $0.9784$ \\
       \hline
-  $14.2$ & $1.23$ & $0.925$ & $1.343$ & $1.01$ \\
+  $14.2$ & $1.23$ & $0.925$ & $1.2826$ & $0.9646$ \\
       \hline
-  $14.4$ & $1.02$ & $0.919$ & $1.114$ & $1.004$ \\
+  $14.4$ & $1.02$ & $0.919$ & $1.0489$ & $0.9450$ \\
       \hline
-  $14.6$ & $0.86$ & $0.906$ & $0.939$ & $0.989$ \\
+  $14.6$ & $0.86$ & $0.906$ & $0.8722$ & $0.9189$ \\
       \hline
-  $14.8$ & $0.734$ & $0.9$ & $0.802$ & $0.983$ \\
+  $14.8$ & $0.734$ & $0.9$ & $0.7344$ & $0.9005$ \\
       \hline
-  $15$ & $0.653$ & $0.887$ & $0.713$ & $0.987$ \\
+  $15$ & $0.653$ & $0.887$ & $0.6446$ & $0.8756$ \\
       \hline
 \end{tabular}
 \caption{Test}
@@ -320,13 +319,15 @@ Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den 
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/a1_q5.eps} 
-\caption{Verlauf der Feldstärke über die Entfernung für Q = 5 und Q = 10}
+\includegraphics[width=0.9\textwidth]{figures/a3.eps} 
+\caption{Verlauf der Spannung am Transponder bei verschiedenen magnetischen Feldstärken, bei einer Antennengüte von Q=50}
 \label{fig:1_q5}
 \end{figure}
 
 \subsection{Diskussion}
 
+
+\pagebreak
 \section{Seitenbandpegel der Rückmodulation}
 \subsection{Aufgabenstellung}
 Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmodulation vom Transponder zu ermitteln. Hierfür soll die Helmholz-Anordnung verwendet werde. Mit Hilfe des Verstärkers soll die magnetische Feldstärke am Referenz-PICC von 1-6 A/m eingestellt werden. Danach soll eine ISO 14443 Karte in das Feld gebracht und ein Kommando über die PC-Software geschickt werden. Mit Hilfe der Helmholtz-Anordnung wird die Transponder-Antwort mit dem Oszilloskop aufgenommen. Die Amplituden der Seitenbänder werden mit Hilfe eines Oszilloskop-Screenshots und einer FFT-Software berechnet. 
@@ -347,7 +348,7 @@ Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmod
 \begin{tabular}{ |c|c|c|c| }
   \hline
     $U_{pp}$ & H(rms) & $U_i(pp)$ oberes Seitenband & $U_i(pp)$ unteres Seitenband \\
-	 [V] & [A/m] & [mV] & [mV] \\
+	 {[V]} & {[A/m]} & {[mV]} & {[mV]} \\
   \hline
   $0.913$ & $0.997$ & $320.6$ & $41.95$\\
   \hline
@@ -362,12 +363,13 @@ Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmod
   $5.53$ & $6.0388$ & $323.9$ & $267.93$ \\
     \hline 
 \end{tabular}
-\caption{Test}
+\caption{Amplitudenwerte der Seitenbänder bei verschiedenen magnetischen Feldstärken}
+\label{tab:ue4}
 \end{center}
 \end{table} 
 
 \subsection{Formeln}
-Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13.56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0.072 \cdot 0.042\ mm^2$.
 \begin{equation}
 U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
 \end{equation}
@@ -385,7 +387,7 @@ U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{0.913V}{\sqrt{2}  \cdot 2} = 
 
 \begin{gather}
 H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
-\frac{0.323V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072mm \cdot 0,042mm} = 0.997 \frac{A}{m}
+\frac{0.323V}{2\pi \cdot 13.56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0.072mm \cdot 0.042mm} = 0.997 \frac{A}{m}
 \end{gather}
 
 \subsection{Diagramme}
@@ -397,6 +399,8 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 \end{figure}
 
 \subsection{Diskussion}
+Um die Amplituden der Seitenbänder zu Ermitteln wurde mit Hilfe des Oszilloskopes ein Single-Shot der Antwort der Karte aufgenommen. Dieses Ergebnis wurde als CSV auf eine Diskette gespeichert und am Computer mit Hilfe einer speziellen Softwrae wurde daraus die FFT berechnet. Als Ergebnis haben wir die Amplitudenwerte des oberen und unteren Seitenbandes bekommen. Diese können aus Tabelle \ref{tab:ue4} entnommen werden. In Abbildung \ref{fig:aufbau4} wurden die beiden Seitenbender über der magnetsichen Feldstärke aufgetragen. Außerdem wurde der ISO-Grenzwert ($U_i(pp)\geq\frac{30}{H^{1.2}}$)mit eingetragen. Wie aus der Abbildung entnommen werde kann, befinden sich beide Seitenbänder über dem von der ISO-Norm geforderten Wert.
+
 
 \begin{thebibliography}{9}
 
