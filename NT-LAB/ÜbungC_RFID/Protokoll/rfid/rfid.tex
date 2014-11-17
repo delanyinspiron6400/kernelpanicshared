@@ -21,9 +21,9 @@ Für den Messaufbau wurde ein speziell dafür modifizierter RFID-Reader mit rege
 Die Antenne und die zur Messung verwendete Referenzspule wurden in einen verstellbaren Distanzhalter platziert. Zur Messung wurde die Referenzspule an ein Oszilloskop angeschlossen.
 
 \subsection{Tabellen}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{ |c|c|c|c|c| }
-\centering
   \hline
      & Q=50 & Q=5 & Q=50 & Q=5\\
 
@@ -87,14 +87,15 @@ Die Antenne und die zur Messung verwendete Referenzspule wurden in einen verstel
       \hline
   $13.5$ & $0.29$ & $0.425$ & $0.317$ & $0.464$ \\
         \hline
-  $14$ & $0.29$ & $0.425$ & $0.317$ & $0.464$ \\
-  \hline
-\label{tab:1}
+  $14$ & $0.29$ & $0.425$ & $0.317$ & $0.464$ \\  \hline
 \end{tabular}
+\caption{Gemessene Spannung bei verschiedenen Höhen und Güten}
 \end{center}
+\label{tab:1}
+\end{table}
 \pagebreak
 \subsection{Formeln}
-Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ m^2$.
 \begin{equation}
 U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
 \end{equation}
@@ -112,13 +113,13 @@ U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{2,9V}{\sqrt{2}  \cdot 2} = 1,
 
 \begin{gather}
 H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
-\frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072mm \cdot 0,042mm} = 3,167\frac{A}{m}
+\frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072m \cdot 0,042m} = 3,167\frac{A}{m}
 \end{gather}
 
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/a1.eps} 
+\includegraphics[width=1.1\textwidth]{figures/a1.eps} 
 \caption{Verlauf der Feldstärke über die Entfernung für Q = 5 und Q = 50}
 \label{fig:1_q5}
 \end{figure}
@@ -137,7 +138,9 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 \item Verstärker: Amplifier Research Model 75A250
 \item Dämpfer: 6dB
 \item Antennen: PCD-Schleifenantennen mit Q=5 und Q=50
-\item 
+\item Referenzspule mit Abmessungen 72mm x 42mm
+\item Oszilloskop: Agilent 54622D
+\item Distanzhalter: verstellbar
 \end{itemize}
 \pagebreak
 \subsection{Diskussion}
@@ -165,10 +168,11 @@ Aus diesen Werten ist ersichtlich, das die Anstiegszeit für höhere Güten grö
 Bei dieser Aufgabe soll der Frequenzgang beider Antennen (Q = 5, Q = 50) von 12MHz bis 15MHz aufgenommen werden.\\
 
 \subsection{Messaufbau}
-Als Signalquelle 
+Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den Verstärker und Dämpfer an die jeweilige Antenne angeschlossen. 
 
 \subsection{Tabellen}
-\centering
+\begin{table}[H]
+\begin{center}
 \begin{tabular}{ |c|c|c|c|c| }
   \hline
      & Q=50 & Q=5 & Q=50 & Q=5\\
@@ -227,9 +231,10 @@ Als Signalquelle
       \hline
   $15$ & $0.653$ & $0.887$ & $0.713$ & $0.987$ \\
       \hline
-  \hline
- 
 \end{tabular}
+\caption{Test}
+\end{center}
+\end{table}
 \subsection{Formeln}
 
 \subsection{Berechnungsbeispiele}
@@ -259,6 +264,8 @@ Als Signalquelle
 
 
 \subsection{Tabellen}
+\begin{table}
+\begin{center}
 \begin{tabular}{ |c|c|c| }
   \hline
 
@@ -299,10 +306,11 @@ Als Signalquelle
   $7.4038$ & $6.78$ & $15.56$  \\
       \hline
   $7.8515$ & $7.19$ & $16.5$  \\
-      \hline
-  \hline
- 
-\end{tabular} 
+      \hline 
+\end{tabular}
+\caption{Test}
+\end{center}
+\end{table} 
 \subsection{Formeln}
 
 \subsection{Berechnungsbeispiele}
@@ -333,11 +341,12 @@ Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmod
 \end{figure}
 
 \subsection{Tabellen}
+
+\begin{table}
+\begin{center}
 \begin{tabular}{ |c|c|c|c| }
   \hline
-
-    $U_{pp}$ & H(rms)) & $U_i(pp) oberes Seitenband$ & $U_i(pp) unteres Seitenband$\\
-
+    $U_{pp}$ & H(rms) & $U_i(pp) oberes Seitenband$ & $U_i(pp) unteres Seitenband$ \\
 	 [V] & [A/m] & [mV] & [mV] \\
   \hline
   $0.913$ & $0.997$ & $320.6$ & $41.95$\\
@@ -352,9 +361,13 @@ Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmod
     \hline
   $5.53$ & $6.0388$ & $323.9$ & $267.93$ \\
     \hline
-  \hline
- 
-\end{tabular} 
+  $6.0388$ & $323.9$ & $267.93$ \\
+    \hline 
+\end{tabular}
+\caption{Test}
+\end{center}
+\end{table} 
+
 \subsection{Formeln}
 Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
 \begin{equation}
