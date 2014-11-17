@@ -90,7 +90,7 @@ Die Antenne und die zur Messung verwendete Referenzspule wurden in einen verstel
 \label{tab:1}
 \end{tabular}
 \end{center}
-
+\pagebreak
 \subsection{Formeln}
 Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
 \begin{equation}
@@ -101,28 +101,57 @@ Zusammenhang zwischen Spitze-Spitze-Spannung und dem Effektivwert der Spannung.
 \begin{equation}
 U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
 \end{equation}
-\pagebreak
+
 \subsection{Berechnungsbeispiele}
 Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:1} Zeile 1 entnommen.
 \begin{equation}
 U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{2,9V}{\sqrt{2}  \cdot 2} = 1,025V
 \end{equation}
 
-\begin{align}
+\begin{gather}
 H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 \frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072mm \cdot 0,042mm} = 3,167\frac{A}{m}
-\end{align}
+\end{gather}
 
 \subsection{Diagramme}
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.9\textwidth]{figures/Aufgabe1_QPSK.jpg} 
-%\caption{Signal in Frequenz- und Zeitbereich}
-%\label{fig:1_sig}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/a1_q5.eps} 
+\caption{Verlauf der Feldstärke über die Entfernung für Q = 5 und Q = 50}
+\label{fig:1_q5}
+\end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/Anstiegq5.jpg} 
+\caption{Messung der Anstiegszeit der Antenne mit Q = 5 am Oszilloskop}
+\label{fig:1_anstieg}
+\end{figure}
 
+\subsection{Geräteliste}
+\begin{itemize}
+\item Computer
+\item Reader: Labor-RFID-Reader
+\item Verstärker: Amplifier Research Model 75A250
+\item Dämpfer: 6dB
+\item Antennen: PCD-Schleifenantennen mit Q=5 und Q=50
+\item 
+\end{itemize}
+\pagebreak
 \subsection{Diskussion}
+Bei dieser Übung wurde jeweils eine Antenne (mit der Güte Q=5, Q=50) in den Aufbau eingesetzt und angeschlossen. Es wurde nur das Trägersignal ohne zusätzliche Information übertragen und mit der Referenzspule gemessen. Die Entfernung der Referenzspule zur Antenne wurde mit 5mm Schritten von 0cm auf 14cm verändert. Mit dem Oszilloskop wurde die Peak-Peak-Spannung gemessen.\\
+Diese Spannung kann mit den oben angeführten Formeln in die magnetische Feldstärke umgerechnet werden. Bei der Umrechnung ist zu beachten, das die magnetische Feldstärke als Effektivwert angegeben werden soll und die Spannung als Spitze-Spitze-Wert gemessen wird.\\
+Die gemessenen und berechneten Werte wurden in einem Diagramm (Abbildung \ref{fig:1_q5}) dargestellt.\\
+Die magnetische Feldstärke ist bei der Antenne mit der Güte Q=50 bis zu einer Entfernung von 10cm höher.\\
+\\
+Zur Messung der Anstiegszeit wurde beim Oszilloskop der Single-Shot-Modus und Triggern an der fallenden Flanke mit nachfolgender Pause von $1,5\mu s$ eingestellt.\\
+Der Reader wurde über die Reader-Software am Computer zum Senden eines Lesebefehls veranlasst, welcher an der Referenzspule und somit am Oszilloskop die zum Triggern benötigte negative Flanke und nachfolgende Pulsbreite (Pause) erzeugt.\\
+Nach dieser Pause steigt die Amplitude des Signals wieder auf die Amplitude des Trägersignals an. Die Zeit für diesen Anstieg von 10\% auf 90\% der Signalamplitude wurde mittels Marker am Oszilloskop gemessen.\\
+\begin{itemize}
+\item Antenne Q = 50: $1,24\mu s$
+\item Antenne Q = 5:  $204ns$
+\end{itemize}
+Aus diesen Werten ist ersichtlich, das die Anstiegszeit für höhere Güten größer wird. Somit kann mit Antenne mit höherer Güte zwar eine größere Reichweite aber eine geringere Datenrate erzielt werden.
 
 
 \pagebreak
@@ -131,13 +160,10 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 
 \section{Messung der H-Feldstärke über der Frequenz bei unterschiedlichen Antennengüten}
 \subsection{Aufgabenstellung}
-Der Zweck dieser Übung besteht darin, die starke Frequenzabhängigkeit bei Antennen hoher Güte (Bandpass-Filter) im Frequenzbereich zu zeigen. Hochgütige Antennen haben eine starke Resonanzerhöhung an der Resonanzfrequenz, niedergütige Antennen einen eher flachen Verlauf. Bei Frequenzen deutlich über oder unter der Resonanzfrequenz, im Fall von RFID-Systemen insbesondere den Unterträgern, welche die Transponderkarten zur Rückmodulation nutzen , können hochgütige Antennen durchaus eine deutlich größere Dämpfung haben, als niedergütige Sendeantennen. Dies hat Einfluss auf die Empfindlichkeit im Empfangszweig eines Lesegerätes.
-\begin{itemize}
-\item Messen Sie die Frequenzabhängigkeit zweier Antennen mit unterschiedlciher Güte und stellen Sie den Verlauf grafisch dar.
-\end{itemize}
-
+Bei dieser Aufgabe soll der Frequenzgang beider Antennen (Q = 5, Q = 50) von 12MHz bis 15MHz aufgenommen werden.\\
 
 \subsection{Messaufbau}
+Als Signalquelle 
 
 \subsection{Tabellen}
 \centering
@@ -281,13 +307,13 @@ Der Zweck dieser Übung besteht darin, die starke Frequenzabhängigkeit bei Ante
 
 
 \pagebreak
-%\subsection{Diagramme}
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.9\textwidth]{figures/Aufgabe3_QPSK.jpg} 
-%\caption{Konstellationsdiagramm, Phasenverlauf, Spektrum eines QPSK modulierten Signals}
-%\label{fig:3_QPSK}
-%\end{figure}
+\subsection{Diagramme}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/a1_q5.eps} 
+\caption{Verlauf der Feldstärke über die Entfernung für Q = 5 und Q = 10}
+\label{fig:1_q5}
+\end{figure}
 
 \subsection{Diskussion}
 
