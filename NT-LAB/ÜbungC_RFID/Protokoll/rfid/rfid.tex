@@ -89,13 +89,13 @@ Die Antenne und die zur Messung verwendete Referenzspule wurden in einen verstel
         \hline
   $14$ & $0.29$ & $0.425$ & $0.317$ & $0.464$ \\  \hline
 \end{tabular}
-\caption{Test}
+\caption{Gemessene Spannung bei verschiedenen Höhen und Güten}
 \end{center}
 \label{tab:1}
 \end{table}
 \pagebreak
 \subsection{Formeln}
-Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ mm^2$.
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ m^2$.
 \begin{equation}
 U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
 \end{equation}
@@ -113,13 +113,13 @@ U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{2,9V}{\sqrt{2}  \cdot 2} = 1,
 
 \begin{gather}
 H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
-\frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072mm \cdot 0,042mm} = 3,167\frac{A}{m}
+\frac{1,025V}{2\pi \cdot 13,56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072m \cdot 0,042m} = 3,167\frac{A}{m}
 \end{gather}
 
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/a1.eps} 
+\includegraphics[width=1.1\textwidth]{figures/a1.eps} 
 \caption{Verlauf der Feldstärke über die Entfernung für Q = 5 und Q = 50}
 \label{fig:1_q5}
 \end{figure}
@@ -138,7 +138,9 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 \item Verstärker: Amplifier Research Model 75A250
 \item Dämpfer: 6dB
 \item Antennen: PCD-Schleifenantennen mit Q=5 und Q=50
-\item 
+\item Referenzspule mit Abmessungen 72mm x 42mm
+\item Oszilloskop: Agilent 54622D
+\item Distanzhalter: verstellbar
 \end{itemize}
 \pagebreak
 \subsection{Diskussion}
@@ -166,7 +168,7 @@ Aus diesen Werten ist ersichtlich, das die Anstiegszeit für höhere Güten grö
 Bei dieser Aufgabe soll der Frequenzgang beider Antennen (Q = 5, Q = 50) von 12MHz bis 15MHz aufgenommen werden.\\
 
 \subsection{Messaufbau}
-Als Signalquelle 
+Als Signalquelle wurde ein Funktionsgenerator verwendet, dieser wurde über den Verstärker und Dämpfer an die jeweilige Antenne angeschlossen. 
 
 \subsection{Tabellen}
 \begin{table}[H]
