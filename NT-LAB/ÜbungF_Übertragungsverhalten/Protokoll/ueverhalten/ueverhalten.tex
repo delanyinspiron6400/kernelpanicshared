@@ -25,7 +25,7 @@ Das unbekannte System wurde mit Hilfe eines Frequenzgenerators gespeist und die 
 \begin{center}
 \begin{tabular}{ |c|c||c|c||c|c| }
   \hline
-    $\frac{T}{2}$ & $\frac{T}{2}$ & $\delta$t & $\delta$t & $U_a$ & $U_a$\\
+    $\frac{T}{2}_{Scale}$ & $\frac{T}{2}_{Div}$ & $\delta$t$_{Scale}$ & $\delta$t$_{Div}$ & $U_{a,Scale}$ & $U_{a,Div}$\\
 
     [$\frac{ms}{Div}$] & [Div] & [$\frac{ms}{Div}$] & [Div] & [$\frac{V}{Div}$] & [Div]\\
   \hline
@@ -70,8 +70,64 @@ $1$ & $0.47$ & $0.32$ & $1000$ & $-169.2$ & $0.16$ & $-15.92$\\
 \end{table}
 
 \subsection{Formeln}
+Die Periodendauer T ergibt sich aus
+\begin{equation}
+T = 2 \cdot \frac{T}{2}_{Scale} \cdot \frac{T}{2}_{Div}
+\end{equation}
+Die Phasenverschiebung $\delta$t in ms ergibt sich durch
+\begin{equation}
+\delta t = \delta t_{Scale} \cdot \delta t_{Div}
+\end{equation}
+Die Ausgangsspannung $U_a$ wird mit
+\begin{equation}
+U_a = U_{a,Scale} \cdot U_{a,Div}
+\end{equation}
+berechnet.
+Die Frequenz f berechnet man mit
+\begin{equation}
+f = \frac{1}{T}
+\end{equation}
+Die Phasenverschiebung $\phi$ in $^\circ$ ergibt sich durch
+\begin{equation}
+\phi = - \frac{\delta t}{T} \cdot 360^\circ
+\end{equation}
+Die Verstärkung A berechnet man mit
+\begin{equation}
+A = \frac{U_a}{U_e}
+\end{equation}\\
+Die Verstärkung $A_{dB}$ berechnet man mit
+\begin{equation}
+A_{dB} = 20 \cdot log(A)
+\end{equation}
+
+
 
 \subsection{Berechnungsbeispiele}
+Für die folgenden Berechnungsbeispiele wurden die Werte aus der ersten Zeile der Tabelle \ref{tab:1} verwendet.
+
+\begin{equation}
+T = 2 \cdot \frac{T}{2}_{Scale} \cdot \frac{T}{2}_{Div} = 2 \cdot 5\frac{ms}{Div} \cdot 4.6 Div = 46ms
+\end{equation}
+\begin{equation}
+\delta t = \delta t_{Scale} \cdot \delta t_{Div} = 0.5\frac{ms}{Div} \cdot 0.7Div = 0.35ms
+\end{equation}
+\begin{equation}
+U_a = U_{a,Scale} \cdot U_{a,Div} = 0.5\frac{V}{Div} \cdot 4.0Div = 2V
+\end{equation}
+\begin{equation}
+f = \frac{1}{T} = \frac{1}{46ms} = 21.74Hz
+\end{equation}
+\begin{equation}
+\phi = - \frac{\delta t}{T} \cdot 360^\circ = -\frac{0.35ms}{46ms	} \cdot 360^\circ = -2.74^\circ
+\end{equation}\\
+Als Eingangssignal wurde für die Aufnahme des Bodediagramm ein Sinussignal mit Spitze-Spitze-Spannung $U_e = 2V$ verwendet.
+\begin{equation}
+A = \frac{U_a}{U_e} = \frac{2V}{2V} = 1
+\end{equation}
+\begin{equation}
+A_{dB} = 20 \cdot log(A) = 20 \cdot log(1) = 0
+\end{equation}
+
 
 \subsection{Diagramme}
 \begin{figure}[H]
@@ -86,9 +142,9 @@ $1$ & $0.47$ & $0.32$ & $1000$ & $-169.2$ & $0.16$ & $-15.92$\\
 Neben dem AMREL FG-513 Funktionsgenerator und dem Voltcraft 662 Oscilloskop wurde auch ein Techtron DT-20 Multimeter verwendet.
 \subsection{Diskussion}
 
-Zunächst wurde mit Hilfe des Funktionsgenerators die Ausgangsspannung bei verschiedenen Frequenzen beobachtet. Hierbei konnten wir erkennen, dass die Phasenverschiebung bei zunehmender Frequenz stieg und die Amplitude sank. Das die Phasenverschiebung bei 3kHz $-180$ erreichte und sich ein Tiefpassverhalten ablesen ließ, muss es sich um eine Tiefpass 2. Ordnung gehandelt haben.
-Um maximales Überschwingen zu erreichen, wurde ein Rechtecksignal mit kleiner Frequenz verwendet. bei einer Frequenz von $5.6$Hz und einer abgelesenen Periodendauer von $2.72$ms haben wir eine Frequenz von $367.647$Hz errechnet. Diese wurde für die weiteren Schritte als die ungedämpfte Eigenfrequenz angenommen. 
-Im letzten Schritt wurden erklärt das das System durch die in Formal BLA gegebene Übertragungsfunktion beschrieben werden kann. Hierfür wurden die Bauteilwerte berechnet und in den Bodeplot eingetragen. Wie aus Diagramm BLA zu entnehmen ist, liegen die von uns gemessenen Werte sehr gut auf der idealen Kurve.
+Zunächst wurde mit Hilfe des Funktionsgenerators die Ausgangsspannung bei verschiedenen Frequenzen beobachtet. Hierbei konnten wir erkennen, dass die Phasenverschiebung bei zunehmender Frequenz stieg und die Amplitude sank. Da die Phasenverschiebung bei 3kHz $-180$ erreichte und sich ein Tiefpassverhalten ablesen ließ, muss es sich um einen Tiefpass 2. Ordnung gehandelt haben.
+Um die Eigenfrequenz bei maximalen Überschwingen zu messen, wurde ein Rechtecksignal mit kleiner Frequenz ($5.6$Hz) verwendet. Durch Überlagerung der einzelnen Schwingungsperioden des Überschwingens und dem Ausnützen des Nachleuchten des analogen Oszilloskops konnte eine Periodendauer von $2.72$ms abgelesen und ein Wert für die gedämpfte Eigenfrequenz von $367.647$Hz errechnet werden. Diese wurde für die weiteren Schritte als die ungedämpfte Eigenfrequenz angenommen. 
+Im letzten Schritt wurde erklärt das das System durch die in Formal BLA gegebene Übertragungsfunktion beschrieben werden kann. Hierfür wurden der Widerstand des unbekannten Filters gemessen ($R = 12.63k\Omega$) und die Bauteilwerte der Spule und Kapazität berechnet. Mit diesen Werten wurde der ideale Frequenz- und Phasengang in der Abbildung \ref{fig:bode_unb} gezeichnet. Wie aus Abbildung \ref{fig:bode_unb} zu entnehmen ist, liegen die von uns gemessenen Werte sehr gut auf der idealen Kurve.
 
 
 
@@ -105,7 +161,7 @@ Das bekannte System wurde mit Hilfe eines Frequenzgenerators gespeist und die Ei
 \begin{center}
 \begin{tabular}{ |c|c||c|c||c|c| }
   \hline
-    $\frac{T}{2}$ & $\frac{T}{2}$ & $\delta$t & $\delta$t & $U_a$ & $U_a$\\
+    $\frac{T}{2}_{Scale}$ & $\frac{T}{2}_{Div}$ & $\delta$t$_{Scale}$ & $\delta$t$_{Div}$ & $U_{a,Scale}$ & $U_{a,Div}$\\
 
     [$\frac{ms}{Div}$] & [Div] & [$\frac{ms}{Div}$] & [Div] & [$\frac{V}{Div}$] & [Div]\\
   \hline
@@ -135,17 +191,17 @@ $0.001$ & $4.7$ & $0.002$ & $1.1$ & $0.001$ & $2.8$ \\
 
     [ms] & [ms] & [V] & [Hz] & [$^\circ$] & & [dB]\\
   \hline
-$20$ & $1.2$ & $2.2$ & $50$ & $-21.6$ & $1.1$ & $0.8$\\
+$20$ & $1.2$ & $2.2$ & $50$ & $-21.6$ & $0.88$ & $-1.1$\\
   \hline
-$9.1$ & $1.15$ & $1.8$ & $109.9$ & $-45.5$ & $0.9$ & $-0.92$\\
+$9.1$ & $1.15$ & $1.8$ & $109.9$ & $-45.5$ & $0.72$ & $-2.85$\\
   \hline
-$7.6$ & $1.05$ & $1.64$ & $131.58$ & $-49.7$ & $0.82$ & $-1.72$\\
+$7.6$ & $1.05$ & $1.64$ & $131.58$ & $-49.7$ & $0.66$ & $-3.61$\\
   \hline
-$1.88$ & $0.4$ & $0.5$ & $531.91$ & $-76.6$ & $0.25$ & $-12.04$\\
+$1.88$ & $0.4$ & $0.5$ & $531.91$ & $-76.6$ & $0.2$ & $-13.98$\\
   \hline
-$0.176$ & $0.04$ & $0.048$ & $5681.8$ & $-81.8$ & $0.024$ & $-32.4$\\
+$0.176$ & $0.04$ & $0.048$ & $5681.8$ & $-81.8$ & $0.0192$ & $-34.3$\\
   \hline
-$0.0094$ & $0.0022$ & $0.0028$ & $106382.9$ & $-84.3$ & $0.0014$ & $-57.1$\\
+$0.0094$ & $0.0022$ & $0.0028$ & $106382.9$ & $-84.3$ & $0.00112$ & $-59.02$\\
   \hline
 \end{tabular}
 \caption{Berechnete Periodendauer, Phasenverschiebung in ms und Grad, Ausgangsspannung, Frequenz und Verstärkung.}
@@ -154,8 +210,61 @@ $0.0094$ & $0.0022$ & $0.0028$ & $106382.9$ & $-84.3$ & $0.0014$ & $-57.1$\\
 \end{table}
 
 \subsection{Formeln}
+Die Periodendauer T ergibt sich aus
+\begin{equation}
+T = 2 \cdot \frac{T}{2}_{Scale} \cdot \frac{T}{2}_{Div}
+\end{equation}
+Die Phasenverschiebung $\delta$t in ms ergibt sich durch
+\begin{equation}
+\delta t = \delta t_{Scale} \cdot \delta t_{Div}
+\end{equation}
+Die Ausgangsspannung $U_a$ wird mit
+\begin{equation}
+U_a = U_{a,Scale} \cdot U_{a,Div}
+\end{equation}
+berechnet.
+Die Frequenz f berechnet man mit
+\begin{equation}
+f = \frac{1}{T}
+\end{equation}
+Die Phasenverschiebung $\phi$ in $^\circ$ ergibt sich durch
+\begin{equation}
+\phi = - \frac{\delta t}{T} \cdot 360^\circ
+\end{equation}
+Die Verstärkung A berechnet man mit
+\begin{equation}
+A = \frac{U_a}{U_e}
+\end{equation}\\
+Die Verstärkung $A_{dB}$ berechnet man mit
+\begin{equation}
+A_{dB} = 20 \cdot log(A)
+\end{equation}
 
 \subsection{Berechnungsbeispiele}
+Für die folgenden Berechnungsbeispiele wurden die Werte aus der ersten Zeile der Tabelle \ref{tab:2} verwendet.
+
+\begin{equation}
+T = 2 \cdot \frac{T}{2}_{Scale} \cdot \frac{T}{2}_{Div} = 2 \cdot 2.0\frac{ms}{Div} \cdot 5.0 Div = 20ms
+\end{equation}
+\begin{equation}
+\delta t = \delta t_{Scale} \cdot \delta t_{Div} = 2.0\frac{ms}{Div} \cdot 0.6Div = 1.2ms
+\end{equation}
+\begin{equation}
+U_a = U_{a,Scale} \cdot U_{a,Div} = 0.5\frac{V}{Div} \cdot 4.4Div = 2.2V
+\end{equation}
+\begin{equation}
+f = \frac{1}{T} = \frac{1}{20ms} = 50Hz
+\end{equation}
+\begin{equation}
+\phi = - \frac{\delta t}{T} \cdot 360^\circ = -\frac{1.2ms}{20ms	} \cdot 360^\circ = -21.6^\circ
+\end{equation}\\
+Als Eingangssignal wurde für die Aufnahme des Bodediagramm ein Sinussignal mit Spitze-Spitze-Spannung $U_e = 2.5V$ verwendet.
+\begin{equation}
+A = \frac{U_a}{U_e} = \frac{2.2V}{2.5V} = 0.88
+\end{equation}
+\begin{equation}
+A_{dB} = 20 \cdot log(A) = 20 \cdot log(0.88) = -1.1
+\end{equation}
 
 \subsection{Diagramme}
 \begin{figure}[H]
