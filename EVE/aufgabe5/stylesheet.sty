@@ -7,19 +7,20 @@
 %
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
-\renewcommand{\arraystretch}{1.5}
+\usepackage{tabularx}
+\usepackage{booktabs}
 %
 \usepackage{amsmath}                    % Mathematical symbols
 \usepackage{amssymb}  
 \usepackage{amsthm}             % Mathematical symbols
 \usepackage{amsfonts}                   % Mathematical symbols
-\usepackage{mathrsfs}                   % Symbols für Fourier und Laplace Transform
-\usepackage{eufrak}                     % Fraktur Symbole
+\usepackage{mathrsfs}                   % Symbols für Fourier und Laplace Transform                   
 \usepackage{multirow}                   % tall tables
 \usepackage{framed}
-\usepackage{float}
 %
 \usepackage{graphicx}                   % eps graphics support
+
+\usepackage{wrapfig}
 %
 % layout
 %
@@ -38,14 +39,14 @@
 \renewcommand{\labelenumii}{\theenumii.}
 \renewcommand{\theenumiii}{\roman{enumiii}} % dritte Ebene
 \renewcommand{\labelenumiii}{\theenumiii.}
-%\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.5}
 
 
 
 
 
 %
-\newcommand{\TUHeader}[9]{% Anzahl der Parameter!!!		
+\newcommand{\TUHeader}[6]{% Anzahl der Parameter!!!		
 \begin{titlepage}
 \pagestyle{empty} \enlargethispage*{25cm}\samepage{
 \vspace*{-2.5cm}
@@ -66,7 +67,7 @@
 \large
 % Institut für Elektrische Meßtechnik und Meßsignalverarbeitung\\
 % Institut für Grundlagen und Theorie der Elektrotechnik\\
-Institut für Kommunikationsnetze und Satellitenkommunikation\\
+Institut für Technische Informatik\\
 ~\\
 \end{flushright}
 \end{tabular}
@@ -74,7 +75,7 @@ Institut für Kommunikationsnetze und Satellitenkommunikation\\
 
 \vspace*{2.5cm}
 %
-\Huge {Nachrichtentechniklabor\\} %
+\Huge {Entwurf von Echtzeitsystemen \\} %
 \vspace*{.2cm} \Large{ Wintersemester 2014\\}
 %
 \vspace*{2cm}
@@ -88,17 +89,17 @@ Institut für Kommunikationsnetze und Satellitenkommunikation\\
 \Large{Gruppe: {#3}\\} \vspace*{0.5cm}%
 
 
-\Large{Protokollführer: {#4}\\} \vspace*{1cm}
+\Large{Ausarbeitung von: {#4}\\} \vspace*{1cm}
 
-\Large{Laborteilnehmer:\\} \vspace*{.1cm}
+%\Large{Laborteilnehmer:\\} \vspace*{.1cm}
 % Name der beteiligten Studierenden
-\Large{#5} \vspace{1cm}
+%\Large{#5} \vspace{1cm}
 %
 %
-\Large{Laborleiter: #6\\} \vspace*{0.2cm}
-\Large{Betreuer: #7\\} \vspace*{1.5cm}
+%\Large{Laborleiter: #6\\} \vspace*{0.2cm}
+%\Large{Betreuer: #7\\} \vspace*{1.5cm}
 %
-\Large{#8, am #9}
+\Large{#5, am #6}
 \end{center}}%
 %
 \clearpage \end{titlepage}}
