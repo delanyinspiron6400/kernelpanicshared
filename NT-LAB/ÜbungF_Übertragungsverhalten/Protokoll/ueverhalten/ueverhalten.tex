@@ -136,7 +136,7 @@ Als Eingangssignal wurde für die Aufnahme des Bodediagramm ein Sinussignal mit 
 A = \frac{U_a}{U_e} = \frac{2V}{2V} = 1
 \end{equation}
 \begin{equation}
-A_{dB} = 20 \cdot log(A) = 20 \cdot log(1) = 0
+A_{dB} = 20 \cdot log(A) = 20 \cdot log(1) = 0 dB
 \end{equation}
 \\
 Für die Berechnung der Bauteilwerte wurde als Ersatzschaltung ein RLC-Serienschwingkreis mit der Abnahme von $U_a$ über C verwendet. Der gemessene Widerstand des Filters betrug $R = 12.63k\Omega$. \\
@@ -161,8 +161,8 @@ C = \frac{1}{\omega_n^2L} = \frac{1}{(2310\frac{rad}{s})^2 \cdot 17.09H} = 11pF
 Neben dem AMREL FG-513 Funktionsgenerator und dem Voltcraft 662 Oscilloskop wurde auch ein Techtron DT-20 Multimeter verwendet.
 \subsection{Diskussion}
 
-Zunächst wurde mit Hilfe des Funktionsgenerators die Ausgangsspannung bei verschiedenen Frequenzen beobachtet. Hierbei konnten wir erkennen, dass die Phasenverschiebung bei zunehmender Frequenz stieg und die Amplitude sank. Da die Phasenverschiebung bei 3kHz $-180^\circ$ erreichte und sich ein Tiefpassverhalten ablesen ließ, muss es sich um einen Tiefpass 2. Ordnung gehandelt haben.
-Um die Eigenfrequenz bei maximalen Überschwingen zu messen, wurde ein Rechtecksignal mit kleiner Frequenz ($5.6$Hz) verwendet. Durch Überlagerung der einzelnen Schwingungsperioden des Überschwingens und dem Ausnützen des Nachleuchten des analogen Oszilloskops konnte eine Periodendauer von $2.72$ms abgelesen und ein Wert für die gedämpfte Eigenfrequenz von $f_n = 367.647$Hz errechnet werden. Diese wurde für die weiteren Schritte als die ungedämpfte Eigenfrequenz angenommen.
+Zunächst wurde mit Hilfe des Funktionsgenerators die Ausgangsspannung bei verschiedenen Frequenzen beobachtet. Hierbei konnten wir erkennen, dass die Phasenverschiebung bei zunehmender Frequenz stieg und die Amplitude sank. Da die Phasenverschiebung bei 3kHz $-180^\circ$ erreichte und sich Tiefpassverhalten ablesen ließ, muss es sich um einen Tiefpass 2. Ordnung gehandelt haben.
+Um die Eigenfrequenz bei maximalen Überschwingen zu messen, wurde ein Rechtecksignal mit kleiner Frequenz ($5.6$Hz) eingespeist. Durch Überlagerung der einzelnen Schwingungsperioden des Überschwingens und dem Ausnützen des Nachleuchten des analogen Oszilloskops konnte eine Periodendauer von $2.72$ms abgelesen und ein Wert für die gedämpfte Eigenfrequenz von $f_n = 367.647$Hz errechnet werden. Diese wurde für die weiteren Schritte als die ungedämpfte Eigenfrequenz angenommen.
 Die benötigten 60\% Überschwingen wurden mit den Potentiometern am Filter und der Prozentskala am Oszilloskop eingestellt. Mit dieser Einstellung wurde das Bodediagramm aufgenommen.\\
 Im letzten Schritt wurde erklärt, das das System, obwohl es nicht bekannt ist, mit einer Ersatzschaltung mit ähnlichem Verhalten (Tiefpassverhalten 2.Ordnung und Schwingungsfähig) und der in Formel 8 gegebenen Übertragungsfunktion angenähert bzw. beschrieben werden kann. In diesem Fall wurde als Ersatzschaltung eine RLC-Serienschaltung mit der Abnahme von $U_a$ über dem Kondensator C verwendet. Hierfür wurden der Widerstand des unbekannten Filters gemessen ($R = 12.63k\Omega$) und die Bauteilwerte der Spule ($L = 17.09H$) und Kapazität ($C = 11nF$) berechnet. Mit diesen Werten wurde der ideale Frequenz- und Phasengang in der Abbildung \ref{fig:bode_unb} gezeichnet. Wie aus Abbildung \ref{fig:bode_unb} zu entnehmen ist, liegen die von uns gemessenen Werte sehr gut auf der idealen Kurve.
 
@@ -292,7 +292,7 @@ Als Eingangssignal wurde für die Aufnahme des Bodediagramm ein Sinussignal mit 
 A = \frac{U_a}{U_e} = \frac{2.2V}{2.5V} = 0.88
 \end{equation}
 \begin{equation}
-A_{dB} = 20 \cdot log(A) = 20 \cdot log(0.88) = -1.1
+A_{dB} = 20 \cdot log(A) = 20 \cdot log(0.88) = -1.1 dB
 \end{equation}
 
 \subsection{Diagramme}
