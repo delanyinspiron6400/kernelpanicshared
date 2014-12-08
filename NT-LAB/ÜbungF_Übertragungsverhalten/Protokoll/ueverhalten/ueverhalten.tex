@@ -99,8 +99,19 @@ Die Verstärkung $A_{dB}$ berechnet man mit
 \begin{equation}
 A_{dB} = 20 \cdot log(A)
 \end{equation}
-
-
+Als Ersatzschaltung für den unbekannten Filter wurde ein RLC-Serienschwingkreis mit der Abnahme von $U_a$ über C verwendet. Die Formeln wurden vom Betreuer angegeben.
+Die Übertragungsfunktion der Ersatzschaltung lautet
+\begin{equation}
+G(s) = \frac{1}{s^2 LC + sRC + 1}
+\end{equation}
+Die Induktivität L wurde mit folgender Formel berechnet.
+\begin{equation}
+L = \frac{R}{2 \zeta \omega_n}
+\end{equation}
+Die Kapazität C berechnet man mit 
+\begin{equation}
+C = \frac{1}{\omega_n^2L}
+\end{equation}
 
 \subsection{Berechnungsbeispiele}
 Für die folgenden Berechnungsbeispiele wurden die Werte aus der ersten Zeile der Tabelle \ref{tab:1} verwendet.
@@ -127,12 +138,20 @@ A = \frac{U_a}{U_e} = \frac{2V}{2V} = 1
 \begin{equation}
 A_{dB} = 20 \cdot log(A) = 20 \cdot log(1) = 0
 \end{equation}
-
+\\
+Für die Berechnung der Bauteilwerte wurde als Ersatzschaltung ein RLC-Serienschwingkreis mit der Abnahme von $U_a$ über C verwendet. Der gemessene Widerstand des Filters betrug $R = 12.63k\Omega$. \\
+Weiters wurde der vom Betreuer angegebene Wert für $\zeta \approx 0.16$ (für 60\% Überschwingen) und der Zusammenhang $\omega_n = 2 \pi f_n = 2 \pi \cdot 367.647Hz = 2310\frac{rad}{s}$ mit der gemessenen Eigenfrequenz $f_n = 367.647Hz$ verwendet.
+\begin{equation}
+L = \frac{R}{2 \zeta \omega_n} = \frac{12.63k\Omega}{2 \cdot 0.16 \cdot 2310\frac{rad}{s}} = 17.09H
+\end{equation}
+\begin{equation}
+C = \frac{1}{\omega_n^2L} = \frac{1}{(2310\frac{rad}{s})^2 \cdot 17.09H} = 11pF
+\end{equation}
 
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/bode_unbekannt.eps} 
+\includegraphics[width=1.2\textwidth]{figures/bode_unbekannt.eps} 
 \caption{Bodediagramm des unbekannten Filters mit idealer und gemessener Kennlinie.}
 \label{fig:bode_unb}
 \end{figure}
@@ -142,9 +161,10 @@ A_{dB} = 20 \cdot log(A) = 20 \cdot log(1) = 0
 Neben dem AMREL FG-513 Funktionsgenerator und dem Voltcraft 662 Oscilloskop wurde auch ein Techtron DT-20 Multimeter verwendet.
 \subsection{Diskussion}
 
-Zunächst wurde mit Hilfe des Funktionsgenerators die Ausgangsspannung bei verschiedenen Frequenzen beobachtet. Hierbei konnten wir erkennen, dass die Phasenverschiebung bei zunehmender Frequenz stieg und die Amplitude sank. Da die Phasenverschiebung bei 3kHz $-180$ erreichte und sich ein Tiefpassverhalten ablesen ließ, muss es sich um einen Tiefpass 2. Ordnung gehandelt haben.
-Um die Eigenfrequenz bei maximalen Überschwingen zu messen, wurde ein Rechtecksignal mit kleiner Frequenz ($5.6$Hz) verwendet. Durch Überlagerung der einzelnen Schwingungsperioden des Überschwingens und dem Ausnützen des Nachleuchten des analogen Oszilloskops konnte eine Periodendauer von $2.72$ms abgelesen und ein Wert für die gedämpfte Eigenfrequenz von $367.647$Hz errechnet werden. Diese wurde für die weiteren Schritte als die ungedämpfte Eigenfrequenz angenommen. 
-Im letzten Schritt wurde erklärt das das System durch die in Formal BLA gegebene Übertragungsfunktion beschrieben werden kann. Hierfür wurden der Widerstand des unbekannten Filters gemessen ($R = 12.63k\Omega$) und die Bauteilwerte der Spule und Kapazität berechnet. Mit diesen Werten wurde der ideale Frequenz- und Phasengang in der Abbildung \ref{fig:bode_unb} gezeichnet. Wie aus Abbildung \ref{fig:bode_unb} zu entnehmen ist, liegen die von uns gemessenen Werte sehr gut auf der idealen Kurve.
+Zunächst wurde mit Hilfe des Funktionsgenerators die Ausgangsspannung bei verschiedenen Frequenzen beobachtet. Hierbei konnten wir erkennen, dass die Phasenverschiebung bei zunehmender Frequenz stieg und die Amplitude sank. Da die Phasenverschiebung bei 3kHz $-180^\circ$ erreichte und sich ein Tiefpassverhalten ablesen ließ, muss es sich um einen Tiefpass 2. Ordnung gehandelt haben.
+Um die Eigenfrequenz bei maximalen Überschwingen zu messen, wurde ein Rechtecksignal mit kleiner Frequenz ($5.6$Hz) verwendet. Durch Überlagerung der einzelnen Schwingungsperioden des Überschwingens und dem Ausnützen des Nachleuchten des analogen Oszilloskops konnte eine Periodendauer von $2.72$ms abgelesen und ein Wert für die gedämpfte Eigenfrequenz von $f_n = 367.647$Hz errechnet werden. Diese wurde für die weiteren Schritte als die ungedämpfte Eigenfrequenz angenommen.
+Die benötigten 60\% Überschwingen wurden mit den Potentiometern am Filter und der Prozentskala am Oszilloskop eingestellt. Mit dieser Einstellung wurde das Bodediagramm aufgenommen.\\
+Im letzten Schritt wurde erklärt, das das System, obwohl es nicht bekannt ist, mit einer Ersatzschaltung mit ähnlichem Verhalten (Tiefpassverhalten 2.Ordnung und Schwingungsfähig) und der in Formel 8 gegebenen Übertragungsfunktion angenähert bzw. beschrieben werden kann. In diesem Fall wurde als Ersatzschaltung eine RLC-Serienschaltung mit der Abnahme von $U_a$ über dem Kondensator C verwendet. Hierfür wurden der Widerstand des unbekannten Filters gemessen ($R = 12.63k\Omega$) und die Bauteilwerte der Spule ($L = 17.09H$) und Kapazität ($C = 11nF$) berechnet. Mit diesen Werten wurde der ideale Frequenz- und Phasengang in der Abbildung \ref{fig:bode_unb} gezeichnet. Wie aus Abbildung \ref{fig:bode_unb} zu entnehmen ist, liegen die von uns gemessenen Werte sehr gut auf der idealen Kurve.
 
 
 
@@ -210,6 +230,10 @@ $0.0094$ & $0.0022$ & $0.0028$ & $106382.9$ & $-84.3$ & $0.00112$ & $-59.02$\\
 \end{table}
 
 \subsection{Formeln}
+Die Grenzfrequenz $f_g$ berechnet man mittels folgender Formel
+\begin{equation}
+f_g = \frac{1}{2 \pi RC}
+\end{equation}
 Die Periodendauer T ergibt sich aus
 \begin{equation}
 T = 2 \cdot \frac{T}{2}_{Scale} \cdot \frac{T}{2}_{Div}
@@ -241,6 +265,11 @@ A_{dB} = 20 \cdot log(A)
 \end{equation}
 
 \subsection{Berechnungsbeispiele}
+Die Grenzfrequenz $f_g$ des bekannten RC-Tiefpass wurde mit den gegebenen Werten $R = 13k\Omega$ und $C = 100 nF$ berechnet.
+\begin{equation}
+f_g = \frac{1}{2 \pi RC} = \frac{1}{2 \pi \cdot 13k\Omega \cdot 100nF} = 122.43Hz
+\end{equation}
+
 Für die folgenden Berechnungsbeispiele wurden die Werte aus der ersten Zeile der Tabelle \ref{tab:2} verwendet.
 
 \begin{equation}
@@ -269,7 +298,7 @@ A_{dB} = 20 \cdot log(A) = 20 \cdot log(0.88) = -1.1
 \subsection{Diagramme}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/bode_rc.eps} 
+\includegraphics[width=1.1\textwidth]{figures/bode_rc.eps} 
 \caption{Bodediagramm des bekannten RC-Tiefpass Filters mit idealer und gemessener Kennlinie.}
 \label{fig:bode_bek}
 \end{figure}
@@ -279,7 +308,9 @@ A_{dB} = 20 \cdot log(A) = 20 \cdot log(0.88) = -1.1
 Hier wurde wieder der AMREL FG-513 Funktionsgenerator und das Voltcraft 662 Oscilloskop verwendet.
 
 \subsection{Diskussion}
-In dieser Teilübung wurde das Bodediagramm eines bekannten Systems aufgenommen. Hierfür wurde die Phasenverschiebung und der Amplitudengang bei verschiedenen Frequenzen aufgenommen. 
+In dieser Teilübung wurde für einen bekannten Filter (RC-Tiefpass) mit gegebenen Bauteilwerten
+die Grenzfrequenz berechnet und gemessen. Die berechnete Grenzfrequenz betrug $f_g = 122.43Hz$. Die Grenzfrequenz wurde bei einer Ausgangsamplitude von 70.7\% der Eingangsamplitude gemessen. Dazu wurde das Oszilloskop und die Prozentskala auf diesem verwendet.\\
+Weiters wurde ein Bodediagramm aufgenommen. Hierfür wurde die Phasenverschiebung und die Ausgangsamplitude bei verschiedenen Frequenzen aufgenommen. Wie aus Abbildung \ref{fig:bode_bek} zu entnehmen ist, liegen die von uns gemessenen Werte bis auf die Phasenverschiebung bei den letzten beiden Werten sehr gut auf der idealen Kurve.
 
 %\begin{thebibliography}{9}
 
