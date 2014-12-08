@@ -238,7 +238,7 @@ Die induzierte Spannung an der Referenzspule wurde auf einem Oszilloskop dargest
 \end{center}
 \end{table}
 \subsection{Formeln}
-Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13,56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0,072 \cdot 0,042\ m^2$.
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13.56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0.072 \cdot 0.042\ m^2$.
 \begin{equation}
 U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
 \end{equation}
@@ -260,11 +260,22 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 \end{gather}
 
 \subsection{Diagramme}
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.9\textwidth]{figures/Aufgabe2_16QAM_1.jpg} 
-%\caption{Spektrum und zeitlicher Verlauf des empfangenen 16-QAM modulierten Signals}\label{fig:aufg2_16QAM_spec}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/a2.eps} 
+\caption{Frequenzgang beider Antennen}\label{fig:a2}
+\end{figure}
+
+\subsection{Geräteliste}
+\begin{itemize}
+\item Funktionsgenerator: LeCroy LW120
+\item Verstärker: Amplifier Research Model 75A250
+\item Dämpfer: 6dB
+\item Antennen: PCD-Schleifenantennen mit Q=5 und Q=50
+\item Referenzspule mit Abmessungen 72mm x 42mm
+\item Oszilloskop: Agilent 54622D
+\item ISO-Aufbau
+\end{itemize}
 
 
 \subsection{Diskussion}
@@ -273,26 +284,25 @@ Dies entspricht einer Feldstärke von $3 \frac{\text{A}}{\text{m}}$. \\
 Während der Messung wurde der Frequenzgenerator von 12-15MHz in 200kHz Schritten verstellt und dabei die Spitze-Spitze-Spannung am Oszilloskop abgelesen. Um die Resonanzfrequenz wurden mehrere Werte in einem engeren Abstand von 50kHz abgelesen (13.2-13.8MHz).
 Diese Messung wurde für beide Antennen durchgeführt. \\
 Für die Antenne mit der Güte 50 erkennt man rund um die Resonanzfrequenz einen starken Anstieg der magnetischen Feldstärke und genau auf der Resonanzfrequenz den Maximalwert von $3.025\frac{\text{A}}{\text{m}}$. Für die Antenne mit der Güte 5 sieht man einen flacheren Verlauf der Kurve, der Maximalwert liegt bei $0.982\frac{\text{A}}{\text{m}}$. Dieser ist allerdings bei 13.56 MHz zu finden, sondern bei 13.95MHz, da die Antenne in dem Aufbau leicht verstimmt war. Außerdem war zu sehen, das die Antenne mit niedrigerer Güte bei gleichem Aufbau und Verstärkung nur mehr $\frac{1}{3}$ der Feldstärke erzeugt. \\
-
+Aus Abbildunng (\ref{fig:a2}) erkennt man, das bei niedrigen sowie hohen Frequenzen die Antenne mit höhere Güte eine höhere Dämpfung aufweist. 
 \pagebreak
 
 
 
 \section{Arbeitsbereich eines Lesegerätes}
 \subsection{Aufgabenstellung}
-
-\begin{itemize}
-\item ???.
-\end{itemize}
-
+Bei dieser Aufgabenstellung soll Referenz-PICC vermessen werden (Ausgegebene Gleichspannung bei gegebener Feldstärke). Weiters soll überprüft werden, ob eine gegebene Karte ISO-konform ist. 
+\subsection{Messaufbau}
+Die Antenne mit Güte 50 wurde über den Dämpfer und den Verstärker am Funktionsgenerator angeschlossen und in den ISO-Aufbau mittig eingebracht. Auf der einen Seite des ISO-Aufbaus wurde die Referenz-Spule und auf der anderen Seite der Referenz-PICC befestigt. Die Spannung der Referenz-Spule wurde mit dem Oszilloskop und die Gleichspannung am Referenz-PICC mit dem Multimeter gemessen. \\
+Im zweiten Teil der Unterübung wurde statt dem ISO-Aufbau der Distanzhalter und statt dem Funktionsgenerator der RFID-Reader verwendet. 
 
 \subsection{Tabellen}
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{ |c|c|c| }
   \hline
 
-    H(rms)) & $U_i(pp) am Scope$ & $U_i(pp) am Transponder$\\
+    H(rms)) & $U_i(pp)\ am\ Scope$ & $U_i(pp)\ am\ Transponder$\\
 
 	{[A/m]} & {[V]} & {[V]} \\
   \hline
@@ -331,13 +341,31 @@ Für die Antenne mit der Güte 50 erkennt man rund um die Resonanzfrequenz einen
   $7.8515$ & $7.19$ & $16.5$  \\
       \hline 
 \end{tabular}
-\caption{Test}
+\caption{Gleichspannung am PICC in Abhängigkeit der magnetischen Feldstärke}
+\label{tab:3}
 \end{center}
 \end{table} 
+
 \subsection{Formeln}
+Diese Formel stellt den Zusammenhang zwischen induzierter Spannung und Feldstärke dar. Die verwendeten Parameter sind $f_r = 13.56$MHz, $\mu_0 = 4\pi \cdot 10^{-7}\frac{As}{Vm}$, $\mu_r = 1$ und $A = 0.072 \cdot 0.042\ m^2$.
+\begin{equation}
+U_{ind} = 2\pi \cdot f_r \cdot \mu_0 \cdot \mu_r \cdot H \cdot A
+\end{equation}
 
+Zusammenhang zwischen Spitze-Spitze-Spannung und dem Effektivwert der Spannung.
+\begin{equation}
+U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
+\end{equation}
 \subsection{Berechnungsbeispiele}
+Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:3} Zeile 2 entnommen.
+\begin{equation}
+U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{0.456V}{\sqrt{2}  \cdot 2} = 0.161 V
+\end{equation}
 
+\begin{gather}
+H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
+\frac{0.161V}{2\pi \cdot 13.56MHz \cdot 4\pi \cdot 10^{-7}\frac{As}{Vm} \cdot 1 \cdot 0,072m \cdot 0,042m} = 0.498\frac{A}{m}
+\end{gather}
 
 \pagebreak
 \subsection{Diagramme}
@@ -345,16 +373,24 @@ Für die Antenne mit der Güte 50 erkennt man rund um die Resonanzfrequenz einen
 \centering
 \includegraphics[width=0.9\textwidth]{figures/a3.eps} 
 \caption{Verlauf der Spannung am Transponder bei verschiedenen magnetischen Feldstärken, bei einer Antennengüte von Q=50}
-\label{fig:1_q5}
+\label{fig:3}
 \end{figure}
 
 \subsection{Diskussion}
+Am Beginn dieser Aufgabe wurde der Funktionsgenerator auf 13.56MHz und eine Amplitude von 100mV eingestellt. 
+Die Verstärkung wurde so eingestellt, sodass an der Referenz-Spule 0.913V (1$\frac{\text{A}}{\text{m}}$) gemessen werden.
+Danach wurde die Amplitude des Funktionsgenerators in $50 \text{mV}$ (entspricht $0.5 \frac{\text{A}}{\text{m}}$) Schritten erhöht und die Spannung am Referenz-PICC gemessen. \\
+Wie aus Abbildung (\ref{fig:3}) ersichtlich, steigt die Spannung am Referenz-PICC linear mit der magnetischen Feldstärke. \\
+Im zweiten Teil der Unterübung wurde der ISO-Aufbau mit dem Distanzhalter und der Funktionsgenerator mit dem (Mifare NXP)-Reader ersetzt. 
+Der Abstand zwischen Reader und Referenz-PICC wurde solange verändert, bis man den Abstand bei ISO-konformen Wert von $1.5\frac{A}{m}$($0.982$V am PICC) ermittelt hat. Da dieser Abstand größer als die von der ISO-Norm geforderte Distanz war, ist der Reader ISO-Konform. \\ Weiters wurde statt dem Referenz-PICC ein Transponder (Karte) verwendet. Am PC wurde bei gesendetem Lesebefehl die ID des Transponders angezeigt.  \\ 
+Die maximale Funktionsweite der Lesegerät-Transponder-Kombination wurde mit 12 cm bestimmt.
+Dies ist möglich, da die Karte weniger als $1.5\frac{A}{m}$ zum Betrieb benötigt. Somit erfüllt auch die Karte die ISO-Norm deutlich. 
 
 
 \pagebreak
 \section{Seitenbandpegel der Rückmodulation}
 \subsection{Aufgabenstellung}
-Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmodulation vom Transponder zu ermitteln. Hierfür soll die Helmholz-Anordnung verwendet werde. Mit Hilfe des Verstärkers soll die magnetische Feldstärke am Referenz-PICC von 1-6 A/m eingestellt werden. Danach soll eine ISO 14443 Karte in das Feld gebracht und ein Kommando über die PC-Software geschickt werden. Mit Hilfe der Helmholtz-Anordnung wird die Transponder-Antwort mit dem Oszilloskop aufgenommen. Die Amplituden der Seitenbänder werden mit Hilfe eines Oszilloskop-Screenshots und einer FFT-Software berechnet. 
+Bei dieser Aufgabe galt es die Amplituden der beiden Seitenbänder der Rückmodulation vom Transponder zu ermitteln. Hierfür soll die Helmholz-Anordnung verwendet werden. Mit Hilfe des Verstärkers soll die magnetische Feldstärke am Transponder von 1-6 A/m eingestellt werden. Danach soll eine ISO 14443 Karte in das Feld gebracht und ein Kommando über die PC-Software geschickt werden. Mit Hilfe der Helmholtz-Anordnung wird die Transponder-Antwort mit dem Oszilloskop aufgenommen. Die Amplituden der Seitenbänder werden mit Hilfe eines Oszilloskop-Screenshots und einer FFT-Software berechnet. 
 
 \subsection{Messaufbau}
 
@@ -367,7 +403,7 @@ Bei dieser Aufgabe, galt es die Amplituden der beiden Seitenbänder der Rückmod
 
 \subsection{Tabellen}
 
-\begin{table}
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{ |c|c|c|c| }
   \hline
@@ -404,7 +440,7 @@ U_{pp} = \sqrt{2}  \cdot 2 \cdot U_{ind}
 \end{equation}
 
 \subsection{Berechnungsbeispiele}
-Die Werte für das Berechnungsbeispiel wurden aus der Tabelle \ref{tab:1} Zeile 1 entnommen.
+Die Werte für das Berechnungsbeispiel wurden aus der Tabelle (\ref{tab:ue4}) Zeile 1 entnommen.
 \begin{equation}
 U_{ind} = \frac{U_{pp}}{\sqrt{2}  \cdot 2} = \frac{0.913V}{\sqrt{2}  \cdot 2} = 0.323V
 \end{equation}
@@ -423,7 +459,7 @@ H = \frac{U_{ind}}{2\pi \cdot f_r \cdot \mu_e \cdot \mu_r \cdot A} = \\
 \end{figure}
 
 \subsection{Diskussion}
-Um die Amplituden der Seitenbänder zu Ermitteln wurde mit Hilfe des Oszilloskopes ein Single-Shot der Antwort der Karte aufgenommen. Dieses Ergebnis wurde als CSV auf eine Diskette gespeichert und am Computer mit Hilfe einer speziellen Softwrae wurde daraus die FFT berechnet. Als Ergebnis haben wir die Amplitudenwerte des oberen und unteren Seitenbandes bekommen. Diese können aus Tabelle \ref{tab:ue4} entnommen werden. In Abbildung \ref{fig:aufbau4} wurden die beiden Seitenbender über der magnetsichen Feldstärke aufgetragen. Außerdem wurde der ISO-Grenzwert ($U_i(pp)\geq\frac{30}{H^{1.2}}$)mit eingetragen. Wie aus der Abbildung entnommen werde kann, befinden sich beide Seitenbänder über dem von der ISO-Norm geforderten Wert.
+Um die Amplituden der Seitenbänder zu ermitteln wurde mit Hilfe des Oszilloskopes ein Single-Shot der Antwort der Karte aufgenommen. Dieses Ergebnis wurde als CSV auf eine Diskette gespeichert und am Computer wurde, mit Hilfe einer speziellen Software, daraus die FFT berechnet. Als Ergebnis haben wir die Amplitudenwerte des oberen und unteren Seitenbandes bekommen. Diese können aus Tabelle (\ref{tab:ue4}) entnommen werden. In Abbildung (\ref{fig:aufbau4}) wurden die beiden Seitenbänder über der magnetischen Feldstärke aufgetragen. Außerdem wurde der ISO-Grenzwert ($U_i(pp)\geq\frac{30}{H^{1.2}}$)mit eingetragen. Wie aus der Abbildung entnommen werden kann, befinden sich beide Seitenbänder über dem von der ISO-Norm geforderten Wert.
 
 
 \begin{thebibliography}{9}
