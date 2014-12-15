@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper,ngerman]{article}
+\usepackage{stylesheet}
+\begin{document}
+\include{titlepage}
+
+%-------------------------------------------------------------------------------
+%
+% Beginn der Aufgabe
+%
+%-------------------------------------------------------------------------------
+
+\section*{Tasksynchronisations (Locking)}
+
+
+\begin{framed}
+Warum und wann ist Tasksynchronisation nötig und was bedeutetn Atomizität und Kritikalität in diesem Zusammenhang?
+Erklären Sie das Problem anhand des folgenden Beispiels. \\
+Führt dieses Beispiel in jedem Fall zur korrekten Realisierung einer kritischen bzw. atomaren Sektion und wird dabei aktives Warten oder passives Warten verwendet?
+Wann is es sinnvoll, Spinlocks einzusetzten, wann nicht,m und wie müsste der code geändert werden, um die jeweils andere Variante zu realisieren? \\
+Kann es unter Verwendung des gezeigten Konzepts durch mehrere Tasks zu Lifelocks oder Deadlocks kommen? Skizzieren Sie gegebenenfalls jeweils eine entsprechendes Szenario.
+\end{framed}
+
+Testcode
+
+
+
+
+
+\pagebreak
+\section*{Tasksynchronisation (Producer-Consumer-Problem)}
+
+
+\begin{framed}
+Erinnern Sie sich zurück an das in der vorlesung besprochenen Ereignissynchronisationsproblem: Ein Monitortask überwacht darin den Systemzustand und sendet bei Überschreitung von Grenzwerten Nachrichten an einen Kommunikationstask. Dieser werden in einem Puffer zwischengespeichert. \\
+Welche Problematik kann dazu führen, dass eine gepufferte Nachricht vom Kommunikationstask nicht weitergeleitet wird? Beschreiben Sie dise anhand des Beispiels aus der Vorlesung genauer!\\
+Das zuvor betrachtete Problem enthält das Erzeuger-Verbraucher-Problem, beschreiben Sie dieses genauer und präsentieren sie Lösungsvarianten dazu!
+\end{framed}
+
+\includecode{code/main.c}
+\pagebreak
+\includecode{code/producer.c}
+\includecode{code/consumer.c}
+\pagebreak
+
+\section*{Echtzeit-Programmiersprachen}
+
+
+\begin{framed}
+Beschäftigen Sie sich mit den in der Vorlesung gezeigten sechs speziellen Anforderung an Echtzeit-Programmiersprachen. Beschreiben Sie die einzelnen Anforderungen und zeigen Sie, welche Bedeutung den einzelnen Anforderungen in der Realität zukommt. Überlegen Sie sich hierzu ein fiktives Beispiel und zeigen Sie, welche Auswirkung das Fehllen jeder speziellen Anforderung haben kann. 
+\end{framed}
+\pagebreak
+
+\section*{Aktivitätsorientierte Modelle}
+
+
+\begin{framed}
+Sie nehmen mit einer Digitalkamera ein Bild auf. Dieses Bild wird in der Kamera geringfügig bearbeitet, z.B.: Reduktion roter Augen, Entzerrung, Weißabgleich, etc. Stellen Sie den Ablauf von der Aufnahme des Bildes über die Bearbeitung bis hin zur anzeige am Bildschirm als Datenflussgraph und Flussdiagramm dar. Sie können die Optimierungen, die am Bild vorgenommen werden, selbst wählen, es müssen aber mindestens 4 sein.
+\end{framed}
+
+\pagebreak
+
+\section*{Multicore Scheduling}
+
+
+\begin{framed}
+Abbildung 5 zeigt die Skizze eines Programmablaufs eines echtzeitfähigen Programms mit einer Zykluszeit von $10$ ms. Um die Echtzeitfähigkeit des Programms zu garantieren, müssen alle Programmteile A bis J vor erreichen der Deadline abgeschlossen werden. \\
+\begin{itemize}
+\item Skizzieren Sie den Programmablauf auf einer CPU bzw. mehreren CPU's.
+\item Wie viele CPU's werden benötigt?
+\item Wie viele CPU's machen Sinn?
+\end{itemize}
+\end{framed}
+
+
+
+   
+   
+\end{document}
