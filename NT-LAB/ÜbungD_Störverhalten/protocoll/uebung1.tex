@@ -9,7 +9,7 @@
 \subsubsection{Aufgabenstellung}
 \begin{enumerate}
 \item Wählen sie Frequenz und Abtastfrequenz so, dass eine Aliasingfrequenz von $440$Hz auftritt. Überprüfen sie das Resultat graphisch und akustisch (Klavier).
-\item Erzeugen Sie einen Frequenzsweep, bei dessen Abtastung Aliasing auftritt. Wählen Sie als Anfangsfrequenz eine Frequenz im Hörfrequenzbereich, und als Endfrequenz eine Frequenz um $3 \cdot f_c$. \\
+\item Erzeugen Sie einen Frequenzsweep, bei dessen Abtastung Aliasing auftritt. Wählen Sie als Anfangsfrequenz eine Frequenz im Hörfrequenzbereich, und als Endfrequenz eine Frequenz um $3 \cdot f_C$. \\
 Überprüfen Sie das Resultat graphisch (sowohl im Zeitbereich als auch im Frequenzbereich) und akustisch. 
 \item Wählen Sie die Datei ``Flöte'' aus. Durch Eingabe einer neuen Samplingfrequenz ($44100/L$, wobei $L$ ganzzahlig sein muss), kann das eingelesene Audiosignal ohne Bandbegrenzung unterabgetastet werden. Schätzen Sie die Auswirkungen ab. Überprüfen sie akustisch die Auswirkungen des Downsamplings ohne Einhaltung des Abtasttheorems. Ab welcher Frequenz werden Aliasing Effekte hörbar? Wodurch ergibt sich diese Frequenz?
 \end{enumerate}
@@ -48,12 +48,12 @@ Berechnung der Signalfrequenz $f_S$ bei einer Abtastfrequenz $f_C = 44100Hz$ und
 \clearpage
 
 \subsubsection{Diskussion}
-Um, wie in Aufgabe 1 gefordert, eine Frequenz von $f_a = 440Hz$ mittels Aliasing zu erzeugen muss eine Signalfrequenz $f_S$ mit einem Abstand von $f_a$ zur Abtastfrequenz $f_C$ verwendet werden. Dieser Zusammenhang wird von der Formel (\ref{eq:1_1}) beschrieben und führte mit den gegebenen Werten zu $f_S = 43660Hz$. Tastet man dieses Signal nun mit $f_C$ ab, wird das Signal um jedes Vielfache von $f_C$ gespiegelt. Deswegen tritt auch bei 440Hz eine Spiegelung des ursprünglichen Signals auf. Dieses Aliasingsignal wurde abgespielt und entsprach der Note $a^1$ auf dem Klavier.\\
+Um, wie in Aufgabe 1 gefordert, eine Frequenz von $f_a = 440Hz$ mittels Aliasing zu erzeugen, muss eine Signalfrequenz $f_S$ mit einem Abstand von $f_a$ zur Abtastfrequenz $f_C$ verwendet werden. Dieser Zusammenhang wird von der Formel (\ref{eq:1_1}) beschrieben und führte mit den gegebenen Werten zu $f_S = 43660Hz$. Tastet man dieses Signal nun mit $f_C$ ab, wird das Signal um jedes Vielfache von $f_C$ gespiegelt. Deswegen tritt auch bei 440Hz eine Spiegelung des ursprünglichen Signals auf. Dieses Aliasingsignal wurde abgespielt und entsprach der Note $a^1$ auf dem Klavier.\\
 \\
 In Aufgabe 2 wurde die Anfangsfrequenz des Frequenzsweep mit 1000Hz gewählt. Die Endfrequenz ergabt sich mit der Angabe $3 \cdot f_C$ zu 132300Hz. Dieser Frequenzsweep wurde über Lautsprecher abgespielt.\\
 Zu hören war ein Ton der sich drei Mal hintereinander von tief bis hoch und wieder bis tief veränderte. Dieses Verhalten lässt sich mittels Aliasing erklären. Die abgespielte Frequenz beginnt bei 1kHz im Hörbereich und steigt bis $\frac{f_C}{2}$ an. Steigt nun die Signalfrequenz über $\frac{f_C}{2}$ bis $f_C$ an wird diese in den Hörbereich gespiegelt (Aliasing). Diese gespiegelte Frequenz wandert nun von $\frac{f_C}{2}$ bis 0Hz. Dieses Verhalten wiederholt sich weitere zwei Mal während die Signalfrequenz zwischen $f_C$ und $2 \cdot f_C$ bzw. $2 \cdot f_C$ und $3 \cdot f_C$ ansteigt.\\
 \\
-!!! 1.3 fehlt noch !!!
+Bei der letzten Teilaufgabe war unser Gehör gefragt. Es wurde die Audiodatei ``Flöte'' mit einer Samplingfrequenz von $44100/L$ berechnet und abgespielt, wobei der Teiler $L$ geändert wurde. Hierbei war ab einem Teiler von $L = 4$ (Samplingfrequenz von $11025$Hz) eine Verschlechterung des Audiosignals hörbar. Diese Verschlechterungen treten durch Spiegelungen von Obertönen ins hörbare Spektrum auf, welche nun in nicht-harmonischem Zusammenhang mit den Grundtönen stehen und somit einen blechernen Klang erzeugen. 
 \pagebreak
 
 %-------------------------------------------------------------------------------
@@ -65,38 +65,66 @@ Zu hören war ein Ton der sich drei Mal hintereinander von tief bis hoch und wie
 \subsection{Quantisierungsfehler, Leistungsdichtespektrum}
 \subsubsection{Aufgabenstellung}
 \begin{enumerate}
-\item Wie sieht der Quantisierungsfehler bei Vollaussteuerung und $8$ bit Wortbreite aus? In welchem Bereich liegt die Amplitude des Quantisierungsfehlers? Sind die Voraussetzungen für $SNR = 6.02 \cdot k$ erfüllt? Welche Charakteristik hat das Fehlersignal? Verwenden Sie das Simulationsprogramm zum Anzeigen des Quantisierungsfehlers in auf $1$ normierten Spannungswerten und Quantisierungsstufen. 
-\item Berechnen Sie den erwarteten Signal-Rauschabstand (SNR) und die Quantisierungsrauschleistungs dichte für die gewählte Auflösung. Welchen Einfluss hat die FFT-Fensterbreite auf das Amplitudenspektrum bzw. die Leistungsdichteverteilung des Quantisierungsrauschens?
+\item Wie sieht der Quantisierungsfehler bei Vollaussteuerung und $8$ Bit Wortbreite aus? In welchem Bereich liegt die Amplitude des Quantisierungsfehlers? Sind die Voraussetzungen für $SNR = 6.02 \cdot k$ erfüllt? Welche Charakteristik hat das Fehlersignal? Verwenden Sie das Simulationsprogramm zum Anzeigen des Quantisierungsfehlers in auf $1$ normierten Spannungswerten und Quantisierungsstufen. 
+\item Berechnen Sie den erwarteten Signal-Rauschabstand (SNR) und die Quantisierungsrauschleistungsdichte für die gewählte Auflösung. Welchen Einfluss hat die FFT-Fensterbreite auf das Amplitudenspektrum bzw. die Leistungsdichteverteilung des Quantisierungsrauschens?
 Überprüfen Sie den berechneten SNR und Quantisierungsrauschleistungsdichteverteilung bei verschiedenen FFT-Fensterbreiten mit dem Simulationsprogramm. 
-\item Berechen Sie die Rauschleistung in einem Terzband und überprüfen Sie das Ergebnis mit dem Simulationsprogramm (empfohlene Wahl: $f_c = 48kHz, f_{Signal} = 890.625Hz$). 
+\item Berechen Sie die Rauschleistung in einem Terzband und überprüfen Sie das Ergebnis mit dem Simulationsprogramm (empfohlene Wahl: $f_C = 48kHz, f_{S} = 890.625Hz$). 
 \end{enumerate}
 
 
 
 \subsubsection{Tabellen}
-
+In dieser Unterübung waren keine Tabellen aufzunehmen. 
 \subsubsection{Formeln}
-
+Der Signal-Rauschabstand (SNR) aufgrund der Wortbreite $k$ lässt sich berechnen durch 
+\begin{equation}
+\label{form:SNR}
+SNR \ = \ 20 \ log \left(2^k\right) = 20 \cdot k \cdot log \left( 2 \right) = 6.02 \ k
+\end{equation}
+Die Quantisierungsrauschleistungsdichte $G_K$ berechnet sich durch
+\begin{equation}
+\label{form:G_K}
+G_K[\text{dB}] = -SNR[\text{dB}] - 10 \ log \ \frac{f_c}{2}
+\end{equation}
+Die Rauschleistung in einem Terzband errechnet sich zu
+\begin{equation}
+P_{Q} = G_K [\text{dB}] + 10 \ log \ \left( f_m \cdot (\sqrt[6]{2}-\frac{1}{\sqrt[6]{2}})\right) 
+\end{equation}
 \subsubsection{Berechnungsbeispiele}
-
+Bei einer Wortbreite von $k=8$ Bit ergibt sich das SNR zu
+\begin{equation}
+\label{eg:SNR8bit}
+SNR \ = \ 20 \ log \left(2^8\right) = 20 \cdot 8 \cdot log \left( 2 \right) = 6.02 \cdot 8 = 48.16 \text{dB}
+\end{equation}
+Die Quantisierungsrauschleistungsdichte $G_K$ berechnet sich zu
+\begin{equation}
+G_K[\text{dB}] = -48.16[\text{dB}] - 10 \ log \ \frac{44100}{2} = -91.59 \ \text{dB}
+\end{equation}
+Die Rauschleistung im Terzband berechnet sich mit der Rauschleistungsdichte\\ $G_K = -140.12$ dB und einer Mittenfrequenz $f_m = 890.625$ Hz zu
+\begin{equation}
+P_{Q} = -140.12 [\text{dB}] + 10 \ log \ \left( 890.625 \cdot (\sqrt[6]{2}-\frac{1}{\sqrt[6]{2}})\right) = -116.98 \ \text{dB}
+\end{equation}
+\pagebreak
 \subsubsection{Diagramme}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\columnwidth]{figures/Aufg1/2_1_1.JPG} 
-\caption{Darstellung eines Signales mit $f_S = 1000Hz$ und des Quantisierungsfehler (schwarze Kreuze) bei 8 Bit Wortbreite und Vollaussteuerung.}
+\caption{Darstellung eines Signales mit $f_S = 1000Hz$ und des Quantisierungsfehlers (schwarze Kreuze) bei 8 Bit Wortbreite und Vollaussteuerung.}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\columnwidth]{figures/Aufg1/2_1_3.JPG} 
 \caption{Darstellung des Quantisierungsfehlers und dessen Größenordnung.}
+\label{fig:quantfehlgroess}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\columnwidth]{figures/Aufg1/2_1_korr.JPG} 
 \caption{Korrelation des Quantisierungsfehlers mit dem Signal.}
+\label{fig:korrquant}
 \end{figure}
 
 \begin{figure}[h!]
@@ -109,6 +137,7 @@ Zu hören war ein Ton der sich drei Mal hintereinander von tief bis hoch und wie
 \centering
 \includegraphics[width=\columnwidth]{figures/Aufg1/2_2_fenster_ok.JPG} 
 \caption{Amplitudenspektrum bzw. Leistungsdichteverteilung des Signals mit Quantisierungsrauschen. Berechnet mittels FFT, einer Fensterbreite von $N = 1024$ und einer Signalfrequenz eines ganzen Vielfachem von $\frac{f_C}{N}$ ($f_S = 100 \cdot \frac{f_C}{N} = 100 \cdot \frac{10240}{1024} = 1000Hz$)}
+\label{fig:SNR98}
 \end{figure}
 
 \begin{figure}[h!]
@@ -121,24 +150,41 @@ Zu hören war ein Ton der sich drei Mal hintereinander von tief bis hoch und wie
 \centering
 \includegraphics[width=\columnwidth]{figures/Aufg1/2_2_fenster_schlecht.JPG} 
 \caption{Amplitudenspektrum bzw. Leistungsdichteverteilung des Signals mit Quantisierungsrauschen. Berechnet mittels FFT, einer Fensterbreite von $N = 1024$ und einer Signalfrequenz für möglichst starkem Lattenzauneffekt $f_S = 100.5 \cdot \frac{f_C}{N} = 100.5 \cdot \frac{10240}{1024} = 1005Hz$}
+\label{fig:lattenzaun}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\columnwidth]{figures/Aufg1/2_3_890hz.JPG} 
 \caption{Amplitudenspektrum bzw. Leistungsdichteverteilung und Rauschleistung eines Signals mit Quantisierungsrauschen ($f_C = 48000Hz$, $f_S = 890.625Hz$).}
+\label{fig:terz}
 \end{figure}
 
 \clearpage
 
 \subsubsection{Diskussion}
+Bei Unteraufgabe 1 war gefragt, wie sich der Quantisierungsfehler bei Vollaussteuerung und $8$ Bit Wortbreite verhält, dieser ist unkorreliert und die Amplitude hat eine Größenordnung von $10^{-3}$ (siehe Abbildung \ref{fig:quantfehlgroess}). Die Voraussetzungen sind erfüllt, da wir Vollaussteuerung hatten und das Signal und der Quantisierungsfehler nicht korrelierten (siehe Abbildung \ref{fig:korrquant}). Das SNR ergab sich zu 48.16 dB (siehe Berechnungsbeispiel \ref{eg:SNR8bit}). Die Charakteristik des Fehlersignals entsprach dem des weißen Rauschens.\\
+\\
+Bei der zweiten Teilaufgabe war der erwartete Signal-Rauschabstand und die Quantisierungsrauschleistungsdichte $G_K$ zu berechnen. Das SNR ergibt sich zu $96.32$ dB (siehe Formel \ref{form:SNR}) und $G_K$ zu $-133.4$ dB (siehe Formel \ref{form:G_K}). 
+Bei falscher Wahl der FFT-Fensterbreite erhält man durch den Lattenzauneffekt eine Aufteilung der Signalamplitude auf die benachbarten Frequenzen, ersichtlich in Abbildung \ref{fig:lattenzaun}. 
+Gewählt wurde die Fensterbreite der FFT mit $N = 1024$ und die Abtastfrequenz mit $f_C = 10240$Hz. 
+Aus zeitlichen Gründen wurden nur zwei wohl gewählte Werte aufgenommen, einen bei einem ganzzahligen Vielfachen ($k=100$, $f_S = 1000$Hz) der kleinsten, auflösbaren Frequenz ($f_0 = \frac{f_C}{N}$) und den andere genau zwischen zwei ganzzahligen Vielfachen ($k = 100.5$, $f_S = 1005$Hz). 
+Bei einer guten Wahl von $k$ ergibt sich das SNR zu $98.88$ dB (siehe Abbildung \ref{fig:SNR98}), bei einer schlechten Wahl erhielten wir ein SNR von $11.64$ dB (siehe Abbildung \ref{fig:lattenzaun}). 
+Bei sehr schlechter Wahl der Fensterbreite überwiegt der Lattenzauneffekt das Rauschen und das SNR wird sehr gering.\\
+\\
+In der letzten Teilaufgabe war die Rauschleistung in einem Terzband ($f_C = 48000$ Hz, $f_S = 890.625$ Hz) zu berechnen. Diese ergibt sich zu $-116.98$ dB. Dieser Wert korrespondiert mit dem gemessenen Wert von $-113.71$ dB (siehe Abbildung \ref{fig:terz}). 
+
+
+
+
+
 
 %-------------------------------------------------------------------------------
 %
 % Granularrauschen und Dither
 %
 %-------------------------------------------------------------------------------
-
+\pagebreak
 \subsection{Granularrauschen und Dither}
 Diese Unterübung wurde aus Zeitgründen nur mündlich mit dem Laborbetreuer erarbeitet. 
 
