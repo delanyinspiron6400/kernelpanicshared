@@ -1,0 +1,129 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, 10 pt, conference]{ieeeconf}
+\usepackage{stylesheet}
+
+
+%-----------------------------------------------------------
+%-
+%-  Titel
+%-
+%-----------------------------------------------------------
+\title{\LARGE \bf Entwurf von Echtzeitsystemen}
+
+%-----------------------------------------------------------
+%-
+%-  Authors
+%-
+%-----------------------------------------------------------
+\author{Martin Winter}
+
+%-----------------------------------------------------------
+%-
+%-  References in references.bib
+%-
+%-----------------------------------------------------------
+\usepackage[style=numeric,backend=bibtex, sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------------------
+%-
+%-  abstract
+%-
+%-----------------------------------------------------------
+\begin{abstract}
+
+This is an abstract 
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------
+%-
+%-  Einführung
+%-
+%-----------------------------------------------------------
+\section{Einführung}
+Wenn man von Echtzeitsystemen spricht, so ist meistens auch die Rede von \textbf{eingebetteten Systemen}, diese lassen sich folgendermaßen charakterisieren:
+
+\begin{center}
+\textit{Jedes System, das eine Form eines programmierbaren Computers enthält, jedoch nicht selbst ein Allzweck-Computer ist und Teil eines größeren Produkts ist, wird als eingebettetes System bezeichnet.}
+\end{center}
+Die Anwendungsbereiche erstrecken sich über die \textbf{Verkehrstechnik} (Automotive(ESP, diverse Steuergeräte, Motor-, Getriebesteuerung...), Avionik, Bahn und Schifffahrt), \textbf{Telekommunikation}, \textbf{Medizintechnik}, den \textbf{Consumer Elektronik Bereich}, \textbf{Industrielle Automation}, \textbf{Smart Buildings} und \textbf{Robotik}.\\
+Echtzeitsysteme sind also oft auch eingebettete Systeme, der Begriff \textbf{Echtzeitverarbeitung} wird definiert als
+
+\begin{center}
+\textit{Die Betriebsart eines Rechensystems, bei der die Programme für die Verarbeitung von Daten, die von außen eintreffen, \textbf{permanent betriebsbereit sind}, so dass ihre Ergebnisse innerhalb einer \textbf{vorbestimmten Zeitperiode} zur Verfügung stehen, die Ankunftszeit der Daten können anwendungsabhängig \textbf{zufällig verteilt sein} oder \textbf{a priori} feststehen.}
+\end{center} 
+
+Somit kann man ein \textbf{Echtzeitsystem} wie folgt definieren
+
+\begin{center}
+\textit{System, dass explizite (begrenzte) \textbf{Antwortzeitbedingungen} einhalten muss, um nicht ernsthafte Konsequenzen zu riskieren, einschließlich einem Systemausfall.} 
+\end{center}
+
+Ein System gilt als \textbf{ausgefallen}, wenn es eine oder mehrere Anforderungen, die in den formalen Systemspezifikationen festgehalten sind, nicht erfüllt. Man kann dabei zwischen \textbf{harten} und \textbf{weichen Echtzeitsystemen} unterscheiden, bei ersteren führt 	eine Verletzung der Zeitbedingung unweigerlich zum Systemausfall, bei zweiteren führt eine solche zu einer Leistungsminderung, aber nicht unbedingt zum Systemausfall. 
+\\
+Man kann zwischen drei \textbf{Echtzeitbedingungen} unterscheiden
+\begin{enumerate}
+\item \textbf{weich}: Zeitschranke darf in gewissem Rahmen überschritten werden
+\item \textbf{hart}: Zeitschranke muss auf jedenfall eingehalten werden, sonst entsteht Schaden. 
+\item \textbf{fest}: Aktion wird beim Überschreiten der Zeitschranke wertlos, aber es entsteht kein Schaden (weniger gebräuchlich).
+\end{enumerate}
+
+\subsection*{Merkmale von Echtzeitsystemen}
+\subsubsection*{Korrektheit}
+Funktionale und zeitliche Richtigkeit des Rechenergebnisses. \\
+Bei Nicht-Echtzeitsystemen folgt aus logischer Korrektheit gleich die allgemeine Korrektheit, bei einem Echtzeitsystem muss zusätzlich noch eine zeitliche Korrektheit gelten, daher sind eigene Programmiertechniken erforderlich.
+\subsubsection*{Rechtzeitigkeit}
+Einhalten von Zeitbedingungen. \\
+Ausgabedaten müssen rechtzeitig berechnet sein und zur Verfügung stehen, Eingabedaten müssen rechtzeitig abgeholt werden. Solche Zeitbedingungen werden durch den jeweiligen technischen Prozess festgelegt und sind somit anwendungsabhängig. \\
+Man unterscheidet die Begriffe \textbf{Exakter Zeitpunkt}, \textbf{Deadline}, \textbf{Frühester Zeitpunkt}, \textbf{Zeitintervall}, \textbf{Periodisch}, \textbf{Aperiodisch}, \textbf{Absolut} und \textbf{Relativ}. 
+\subsubsection*{Gleichzeitigkeit}
+Erledigung von vielen parallelen Aufgaben unter Einhaltung von jeweils eigenen Zeitanforderungen. \\
+Dabei wird ein \textbf{Echtzeit-Scheduler} zur Ablaufplanung benötigt. 
+\subsubsection*{Determiniertheit}
+Verhalten des Systems unter allen äußeren Bedingungen  \textbf{eindeutig} im Voraus bestimmbar(Für viele komplexe Systeme  eine zu strenge Forderung). Normalerweise genügt \textbf{Vorhersagbarkeit}, das heißt funktionales und zeitliches Verhalten muss in seiner \textbf{Wirkung} abschätzbar bleiben (z.B.: Die Auswirkung von Fehlern). 
+
+
+\subsection*{Prinzipieller Aufbau eingebetteter Systeme}
+Zentrum ist ein Computer, der als Mikrokontroller, als Parallelrechner oder ein räumlich verteiltes System, dieser kommuniziert mit dem Prozess-Interface und dem User-Interface. An das Prozess-Interface sind Sensoren und Aktoren angebunden und über das User-Interface können menschliche User mit dem System interagieren. Die Software (Betriebssystem, Anwendungsprogramme, Utilities...) muss den Echtzeitanforderungen für Echtzeitsysteme genügen. 
+Standardsoftware ist meist nicht ohne weiteres einsetzbar. 
+
+\pagebreak
+
+\section{Zielhardware}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------
+%-
+%-  Appendix
+%-
+%-----------------------------------------------------------
+\section*{APPENDIX}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+
+
+
+
+\end{document}

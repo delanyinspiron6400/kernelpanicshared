@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+    \begin{axis}[xlabel={Time $t$ (\si{\second})}, 
+                 ylabel={Value $y$ (-)},
+                 grid=major, 
+                 xmin=0,  xmax=6.25,
+                 ymin=-1, ymax=1,
+                 width=\columnwidth, % width of the plot including the axis labels
+                 height=4cm,
+                 legend pos=north east,
+                 legend style={nodes={right}}] % makes text left aligned
+      % Read data from the table into a local variable\ldots
+      \pgfplotstableread{\plotdatadir/sinus.dat} \storedtable
+      % Order: t, signal1, signal2, ...
+      \addplot[mark=none, red!50!black, thick, dotted] table [x index=0, y index=1] {\storedtable};
+      \addlegendentry{Sine};
+      \addplot[mark=none, green!50!black, thick] table [x index=0, y index=2] {\storedtable};
+      \addlegendentry{Cosine};
+    \end{axis}
+\end{tikzpicture}
