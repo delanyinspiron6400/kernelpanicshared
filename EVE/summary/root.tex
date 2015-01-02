@@ -77,8 +77,8 @@ Ein System gilt als \textbf{ausgefallen}, wenn es eine oder mehrere Anforderunge
 \pagebreak
 Man kann zwischen drei \textbf{Echtzeitbedingungen} unterscheiden
 \begin{enumerate}
-\item \textbf{weich}: Zeitschranke darf in gewissem Rahmen überschritten werden
-\item \textbf{hart}: Zeitschranke muss auf jeden Fall eingehalten werden, sonst entsteht Schaden. 
+\item \textbf{weich}: Zeitschranke darf in gewissem Rahmen überschritten werden, Konsequenzen sind zum Beispiel höhere Kosten, geringere Qualität, zum Analysieren verwendet man die \textit{average performance}. 
+\item \textbf{hart}: Zeitschranke muss auf jeden Fall eingehalten werden, sonst entsteht Schaden, entweder nicht verwendbare Resultate, Gefahr für Personen oder den Prozess selbst, zum Analysieren verwendet man die \textit{worst case performance}. 
 \item \textbf{fest}: Aktion wird beim Überschreiten der Zeitschranke wertlos, aber es entsteht kein Schaden (weniger gebräuchlich).
 \end{enumerate}
 
@@ -98,12 +98,35 @@ Verhalten des Systems unter allen äußeren Bedingungen  \textbf{eindeutig} im V
 
 
 \subsection*{\textbf{Prinzipieller Aufbau eingebetteter Systeme}}
-Zentrum ist ein Computer, der als Mikrokontroller, als Parallelrechner oder ein räumlich verteiltes System, dieser kommuniziert mit dem Prozess-Interface und dem User-Interface. An das Prozess-Interface sind Sensoren und Aktoren angebunden und über das User-Interface können menschliche User mit dem System interagieren. Die Software (Betriebssystem, Anwendungsprogramme, Utilities...) muss den Echtzeitanforderungen für Echtzeitsysteme genügen. 
-Standardsoftware ist meist nicht ohne weiteres einsetzbar. 
+Zentrum ist ein Computer, der als Mikrokontroller, als Parallelrechner oder ein räumlich verteiltes System ausgeführt sein kann, dieser kommuniziert mit dem Prozess-Interface und dem User-Interface. An das Prozess-Interface sind Sensoren und Aktoren angebunden und über das User-Interface können menschliche User mit dem System interagieren. Die Software (Betriebssystem, Anwendungsprogramme, Utilities...) muss den Echtzeitanforderungen für Echtzeitsysteme genügen, Standardsoftware ist meist nicht ohne weiteres einsetzbar. 
 
-\pagebreak
+\subsection*{\textbf{Aktuelle Trends}}
+Eingebettete Echtzeitsysteme dringen in immer mehr Produkte vor, sie werden auch zunehmend in kritischen Anwendungsgebieten eingesetzt, wo ein Ausfall katastrophale Folgen haben kann. $95$ Prozent aller Mikroprozessoren arbeiten heute schon in eingebetteten Systemen, $90$ Prozent allen Programmcodes wird für eingebettete Systeme geschrieben. 
 
 \section{\textbf{Zielhardware}}
+\subsection{\textbf{Digitale Systemkomponenten}}
+Diese setzen sich zusammen aus unterschiedlichen Systemkomponenten, abhängig vom Einsatzgebiet und den resultierenden Anforderungen an die Rechenleistung. 
+\subsubsection*{\textbf{Spezialhardware}}
+\textbf{FSM = Finite State Machines} haben ein Zustandsregister, dass den Zustand des Automaten hält, eine Next-State-Function, die den Folgezustand berechnet sowie eine Output-Function, die in Abhängigkeit des Zustands (Moore-Automat) oder in Abhängigkeit des Zustands und der Eingabe (Mealy-Automat) einen Output produziert. \\
+Diese werden meist als FPGA oder ASIc realisiert, diese sind schnell, aber nicht sehr flexibel. \\
+Ein \textbf{Datenpfad mit Ablaufsteuerung} realisiert ein Steuerwerk, ausgeführt meistens als FSM, welches den Datenfluss im Datenpfad steuert, der Entwurf erfolgt hierbei auf der Registertransfer-Ebene und die Implementierung findet ebenso als FPGA oder ASIC statt, damit sind auch komplexe Schaltwerke realisierbar, aber man ist noch immer nicht wirklich flexibel. 
+\subsubsection*{\textbf{Prozessoren}}
+\textbf{CISC (Complex Instruction Set Computer) Architektur} beschreibt eine klassische Prozessorarchitektur mit mikroprogrammiertem Steuerwerk und umfangreichen Befehlssatz. Es ist ein weites Spektrum an I/O-Komponenten verfügbar und es lässt sich flexibel programmieren. Diese Architektur ist noch vielfach im Einsatz, obwohl eigentlich veraltet. \\
+\textbf{RISC (Reduced Instruction Set Computer) Architektur} beschreibt eine moderne Prozessorarchitektur, mit kleinem, effizient implementierbaren Befehlssatz und oft interner Parallelarbeit, es handelt sich dabei um den heutigen Stand der Technik, man kann komfortable Entwicklungsumgebungen verwenden und sieht die Anwendung in 8-Bit-RISC-Mikrokontrollern mit einfacher Peripherie für einfache Anwendungen sowie in 32-Bit-RISC-Prozessoren bei höheren Leistungsanforderungen. \\
+\textbf{VLIW (Very Large Instruction Word) Architekturen} ermöglichen interne Parallelarbeit durch lange Befehlswörter, die gleichzeitig mehreren Rechenwerken die Nutzung gestatten, diese Architektur ist bisher noch wenig verbreitet, ist jedoch eventuell für die Zukunft interessant. \\
+\textbf{Digitale Signalprozessoren (DSPs)} sind Prozessoren, deren Architektur und Befehlssatz für die Ausführung von Algorithmen der Signalverarbeitung optimiert sind, man befindet sich dabei in der recht hardwarenahen Programmierung, die Leistung lässt sich zwischen Spezialhardware und Universalprozessoren einordnen. Diese sind weit verbreitet in eingebetteten Systemen mit Signalverarbeitungskomponenten. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
